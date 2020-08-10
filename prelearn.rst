@@ -37,4 +37,4 @@ Coverage
 
         * Functions
         * Scalar derivative
-		definition,common rules of differentiation, chain rule, partial derivatives 
+		* definition,common rules of differentiation, chain rule, partial derivatives 
