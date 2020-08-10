@@ -12,7 +12,7 @@ Mathematics Prerequisites for AIML
         
 Coverage
 ========
-:1 : Introduction to Statistics:
+:1:Introduction to Statistics:
 
         * Measures of Centre
         * Measures of Spread
@@ -33,3 +33,8 @@ Coverage
         * Random variables- continuous and discrete, expectation, variance, distributions- joint and conditional
         * Bayes’ Theorem, MAP, MLE
 	* Popular distributions- binomial, Bernoulli, Poisson, exponential, gaussian
+:4:Calculus:
+
+        * Functions
+        * Scalar derivative
+		definition,common rules of differentiation, chain rule, partial derivatives 
