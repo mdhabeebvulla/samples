@@ -19,14 +19,12 @@ Coverage
         * Covariance
 	* Correlation
 	* Normalization
-
 :2:Introduction to Linear Algebra:
         * Vectors
 		definition, scalars, addition, scalar multiplication, inner product (dot product), vector projection, cosine similarity, orthogonal vectors, normal and orthonormal vectors, vector norm, vector space, linear combination, linear span, linear independence, basis vectors
         * Matrices
 		definition, addition, transpose, scalar multiplication, matrix multiplication, matrix multiplication properties, functions, linear transformation, determinant, identity matrix, invertible matrix and inverse, rank, trace, popular type of matrices- symmetric, diagonal, orthogonal, orthonormal, positive definite matrix
-        
-                
+                        
 :3:Introduction to Probability:
         * Basic rules and axioms
 		events, sample space, frequentist approach, dependent and independent events, conditional probability
