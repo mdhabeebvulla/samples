@@ -1,18 +1,14 @@
-Python for AIML
-^^^^^^^^^^^^^^^
+Mathematics Prerequisites for AIML
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :Audience:
-        Current college students, with some programming knowledge.
+        Current AIML BATCH 15 students.
 
 :Objective:
-        To learn the Python lanuage, libraries and the tools from the ecosystem for learning AIML
+        To learn Mathematics Prerequisites for AIML 
 
 :Mode:
         Online; using TalentSprint's powerful "Blended Delivery, Practice and Feedback" model 
-
-:Duration:
-        50 hours over 7 days
-
         
 Coverage
 ========
