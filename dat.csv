@@ -1,0 +1,11 @@
+Taste,Temp,Texture,Like
+salty,hot,soft,no
+spicy,hot,soft,no
+spicy,hot,hard,yes
+spicy,cold,hard,no
+spicy,hot,hard,yes
+sweet,cold,soft,yes
+salty,cold,soft,no
+sweet,hot,soft,yes
+spicy,cold,soft,yes
+salty,hot,hard,yes
