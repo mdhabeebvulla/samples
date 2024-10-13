@@ -1,0 +1,3233 @@
+Discover APIsec
+
+The Only 100% Automated `API` Testing Platform.  APIsec automatically creates and runs thousands of test cases tailored to your unique API architecture - integrated directly into your workflow.
+ 
+Instantly secure APIs in Apigee, Azure, AWS & more with `API Gateway`.
+
+`Scanners`!  APIsec Scanner is a light-weight Docker container which receives tasks from the APIsec control-plane over SSL.  These scanners run playbooks/security tests.
+
+`Vault` allows you to securely store and use API keys and credentials, tokens, passwords, and key-value pairs.  APIsec Vault is like a password manager that stores all your credentials securely and provides read-only access to test playbooks.
+ 
+Create and update new and existing `Security Categories` to remediate/test new and emerging security threats.
+
+Your organization’s security is presented in graphical and statistical formats for better visibility in the `Dashboard`.
+
+Let’s get started!  Btw, once you register your API, it will appear under the Project section below the content tiles.
+
+<img width="1505" alt="apisec-homepage" src="https://user-images.githubusercontent.com/109250250/180360118-c09108f4-e2a6-49ba-858b-e9cc2b9b9586.png">
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Getting Started
+
+Let's get started with an overview of what you can accomplish in APIsec and you can dive into each section by navigating the content on the left.
+
+1. Register for an account
+    
+    From the login page:
+    1. Fill in the form with your details.
+    2. Click on Login.
+
+![image](https://github.com/apisec-inc/documentation/assets/105206963/f5eec49a-688f-4890-802b-b165b0168fd9)
+
+2. Register an API
+    
+    After you login you'll be on the user homepage.
+    1. Register an API by clicking on the first block.
+    2. Give your API Project a name.
+    3. Add a spec URL for an OpenAPI Spec.
+    4. Click "Register".
+
+![Screen Shot 2022-07-22 at 2 57 22 PM](https://user-images.githubusercontent.com/138704/180505660-7bf76bb1-c3a6-4a07-9632-6ec7a72b68da.png)
+
+3. Update your API in Projects
+    
+    You now have an API project to work with.
+    1. Click on your new project tile to work with it.
+    2. You will land on the API Project Dashboard. It wont have much to see yet.
+    3. Go to "Configurations". This is optional but good to know for later.
+        - If you know some credentials and variables you want to include, you can import them or set them up now.
+        - If not, you can skip this for now. There are default ones provided to edit and replace.
+    4. Go to "Playbooks". It may take a few minutes for the playbooks to populate, 
+    you need to wait for this before performing a scan.
+
+![Screen Shot 2022-07-22 at 2 58 59 PM](https://user-images.githubusercontent.com/138704/180505844-a82e8260-3c22-47af-afef-258ef49a148f.png)
+
+4. Run a scan
+    
+    1. Go back to the Dashboard by clicking on the API Project name.
+    2. Select your Security Categories. If you want OWASP Top 10, you can Select all, 
+        - then remove the few that say "Top 25" at the end.
+    3. Click "Submit"
+    Your scan is running!
+
+![Screen Shot 2022-07-22 at 3 00 44 PM](https://user-images.githubusercontent.com/138704/180506074-f41e26eb-d221-4d31-81b0-f06cf41a6ae3.png)
+
+5. Review the results
+    
+    After submitting, you'll land on the Scan Summary page for the scan just started.
+    It will populate with the results you can browse.
+
+![Screen Shot 2022-07-22 at 3 02 38 PM](https://user-images.githubusercontent.com/138704/180506367-b6dc67ee-c508-4651-ab0a-8123b2ebc43e.png)
+
+6. What's next?
+    There's a lot more you can do, but you now have the basics working. Here are some features to explore:
+    - Verify scan results.
+    - Rescan after changes.
+    - Update credentials and variables.
+    - Integrate to ticket, notification and CI/CD systems.
+    - Make scan summary reports a part of your regular security practices.
+
+![Screen Shot 2022-07-22 at 3 06 37 PM](https://user-images.githubusercontent.com/138704/180506923-1af4ed28-9cd4-4b71-8d48-25ad7171e1a1.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Register an API
+
+
+To get started with APIsec security coverage and scanning for your APIs, you need to first register your API.
+
+On the Homepage, `click` Register API
+
+<img alt="[RegisterAPI(1).png]" src="https://user-images.githubusercontent.com/75529175/171797629-e14d508b-6e8f-407e-9c96-eee030ed0f51.png" />
+
+1.1. Basic Section
+The Basic Section requires the following information:
+
+1. API name: Provide any name that you would like to link with your project. 
+2. API Document URL or File: Provide a URL or upload a file to allow APIsec to record your API in the database for automated security coverage. 
+	- The supported formats for a URL link are OpenAPI Specification (OAS), Swagger, Postman & RAML.  e.g. `https://example.com/v2/api-docs` 
+	- The supported formats for an API document file are same as for URL link. 
+
+<img alt="Register Api Basic Section" src="https://user-images.githubusercontent.com/75529175/166118460-fc02dcab-c25a-4161-92af-11aa850c21c2.png" />
+
+ 1.2. Advanced Section
+The Advanced Section requires the following information:
+
+1. Credentials:  Provide credentials for the API i.e. username, role, email & password. These credentials are for specific user accounts you want to scan via APIsec. We recommend including a user to represent each role within your product or organization. 
+	- The format is <b>
+	`UserA||Basic||[user1@example.com](mailto:user1@example.com)||admin123$`
+
+2. Tokens:  An API token is similar to a password and allows a user to authenticate to a software API to perform actions. The API service generates a unique token for the requested application or user, which is used every time for authentication when the user requests to use the service.
+	- Find the steps to generate the token by clicking `show more` on the comment box of the Advanced Section. 
+
+3. Scanner Selection:  You can `select` a scanner from the list of APIsec private scanners available in the drop-down menu. I selected Super_1 for this demo. 
+
+<img alt="Register Api Advanced Section" src="https://user-images.githubusercontent.com/75529175/166118455-292791e3-cce8-4795-b686-21b23f87e3c6.png" />
+
+Once you completed all of the requirements, `click` Register and proceed. 
+
+A message prompt will be displayed on the Homepage like in the screenshot below.  Your project name will be created with your settings similar to  "Demo" in the screenshot and added to My Projects
+
+<img alt="Register Api process complete" src="https://user-images.githubusercontent.com/75529175/171797636-625e54d8-6dc2-4bc3-9071-cbe4285eb80d.png"/>
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Add Endpoints via UI
+
+Adding endpoints to an existing project
+
+Although endpoints are added at the time of registering an API, you can still add these manually. This document outlines step-be-step to add that.
+
+From the homepage find for a previously created project where you need to add more endpoints. Open that project and click on the Endpoints tile. 
+
+<img width="1506" alt="Screen Shot 2022-09-30 at 22 37 14" src="https://user-images.githubusercontent.com/109250250/193392623-24d46de7-7570-4db1-9930-a1a3f5b6a5a9.png">
+
+
+On the top right corner of the page, click on the Add Endpoints button.
+
+<img width="1506" alt="Screen Shot 2022-09-30 at 22 48 17" src="https://user-images.githubusercontent.com/109250250/193392632-acf16145-ffb3-4636-9afa-32c0613ed91f.png">
+
+In the Popup > Add the endpoint along with its method, for example: post:/api/v1/addAccount/sample > Before you Save, keeping the checkbox checked will scan these specific endpoint against different categories.
+
+<img width="1358" alt="Screen Shot 2022-10-31 at 13 54 53" src="https://user-images.githubusercontent.com/109250250/199087796-be67f99d-5036-43db-8777-fb4aac9f060a.png">
+
+Observe the newly endpoint and a tag is added to identify the manual entries.
+
+<img width="1425" alt="Screen Shot 2022-10-03 at 10 47 59" src="https://user-images.githubusercontent.com/109250250/193658166-39a94367-3c82-4f4c-b8a4-d6250316a751.png">
+
+Go to the Dashboard of the project > Observe the endpoint count has been increased now.  The Playbooks will also be generating
+
+<img width="1503" alt="Screen Shot 2022-09-30 at 22 50 19" src="https://user-images.githubusercontent.com/109250250/193392655-6122b932-b4b7-495a-9b8d-b356399c5bcb.png">
+
+Run Scan if you haven’t already in the previous screen.
+
+More information about the dashboard can be found [here](https://docs.apisec.ai/ProjectDashboard/). 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ Add Endpoints via cURL
+
+ Using command line to add endpoints
+
+Prerequisite - Register an API
+
+Before using the CLI, the user must have registered an API from the UI.
+
+Register a new API project in APIsec using the JSON API documentation located in the APIsec/On-Prem at /Netbanking/NBEnhancement2Test.json
+
+Generate an access token
+
+curl --location --request POST 'https://`<APIsec On-Prem URL>`/auth/login' --header 'Content-Type: application/json' --data-raw '{"username":"`<username>`","password":"`<password>`"}'
+
+
+Get Project ID
+
+Get the Project ID of the API Project registered in Step 1. The easiest way is to find it in the UI by navigating to the project and extracting it from the URL:
+
+Format:
+
+```
+https://cloud.apisec.ai/#/app/projects/<project-id>/dashboard
+```
+Note:  Replace the <project-id> from the UI by following the details below after an API is registered:
+
+hhttps://cloud.apisec.ai/#/app/projects/8adc83a083ca93f30183d73048333ab8/dashboard
+
+From the URL the Project ID is: 8adc83a083ca93f30183d73048333ab8
+
+Add Endpoint using cURL
+       
+The User will call the APIsec API endpoint via this example cURL or similar programming script.  The format of the request will be:
+
+
+curl --location --request POST 'https://`<APISecOn-PremURL>`/api/v1/endpoint/project/`<ADD-Project-ID>`' \
+--header 'Authorization: Bearer `<token>` \
+--header 'Content-Type: application/json' \
+--data-raw '[{
+       "endpoint":"get:/api/v1/orgs/{id}/users?page=0&pageSize=20"
+    }
+    ]'
+
+
+After you execute the command
+
+Confirm that API returns a successful completion message.
+
+Login to the APIsec portal, access the corresponding project, and confirm the addition of the new endpoints.
+
+Execute the Unsecured Endpoints security category and confirm successful completion of the tests.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ What is API Gateway?
+
+An API gateway is a server and we normally call it an API server.  It is an entry point into the application or software.  Most organizations' APIs are deployed through a cloud API gateway.  API gateways handle and process the incoming API calls from the clients and respond accordingly.  Clients can be user browsers, scripts from partners, other application components, or anything else that needs to use the common interface.
+
+1. On the Home page, `click` API Gateways.
+   
+<img alt="Home2.png" src="https://user-images.githubusercontent.com/75529175/171797617-f872d79a-13ba-41d9-af8f-3b66f6954ea5.png" />
+
+2. On the API Gateways page, `click` "+ Register Gateway"
+
+<img alt="Register API gateway" src="https://user-images.githubusercontent.com/75529175/166118467-47f9f0ec-17a0-4527-bd20-1f7640aa6510.png" />
+
+The important thing to note here is the 'Enable Automated Onboarding' checkbox, which will enable automated onboarding of APIs and onboard all the APIs uploaded or updated on that registered API gateway weekly.
+
+<img alt="Register API gateway" src="https://user-images.githubusercontent.com/75529175/166118470-7a37261f-c884-462a-9a30-377fecd7d524.png" />
+
+3. Select your API's Gateway from the drop-down menu.  For this demo, I selected 'AWS'. 
+   
+<img alt="Register API gateway" src="https://user-images.githubusercontent.com/75529175/166118471-91017ff8-7637-4b0d-8f0c-0cf2fd27aadc.png" />
+
+4. Provide the required credentials for registering the selected API Gateway and `click` Create.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Postman Set Up
+
+The APIsec platform helps you integrate with wide range of applications that connect with your API Gateway.  
+Let's start by registering the Postman APIs.  
+
+First, add your Postman credentials as described in, Vault section.  
+Note: In the dropdown menu, the Postman option will be under the API Gateway section.
+
+Once you have your credentials setup, from the homepage, click on the API Gateway.
+Look for the Postman setup with the name you have created above. Click on that and your APIs from Postman should be listed.
+
+<img width="1083" alt="Screen Shot 2022-08-15 at 22 25 07" src="https://user-images.githubusercontent.com/109250250/184792635-a0a36d5c-aaa7-4877-8d9f-56feaeb68f95.png">
+
+Register those APIs and you'll be redirected to the homepage.  
+
+<img width="1027" alt="Screen Shot 2022-08-15 at 22 25 37" src="https://user-images.githubusercontent.com/109250250/184792684-f5977626-ed83-4b52-9cc4-4763072baedc.png">
+
+During this proces, the APIsec will be writing the customized validations for the APIs (this step may take a few minutes to complete).  You'll be redirected to the homepage.
+
+<img width="1219" alt="Screen Shot 2022-08-15 at 22 26 08" src="https://user-images.githubusercontent.com/109250250/184793227-995df346-6d68-42a0-a3da-de43553c324a.png">
+
+Click on project and start with your first scan.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Azure API Gateway
+
+ Configuring Azure API Management Gateway
+
+From the main APIsec dashboard, click API Gateways.
+
+![image](https://user-images.githubusercontent.com/115025465/216443349-89d2bfc6-c530-405d-a7f9-9b20c5773715.png)
+
+Once you have done that Click "+ Register Gateway" and then select Azure API Management.
+
+![image](https://user-images.githubusercontent.com/115025465/216377912-9e4a317c-52b4-4698-9b4d-f85b9b2b09ca.png)
+
+
+On the next screen, you will have a number of fields to fill out:
+   Name (what makes sense to you), Client ID, Client Secret Key and Tenant ID.
+   
+   Then click "Create"
+   
+   ![image](https://user-images.githubusercontent.com/115025465/216378444-08dc10b3-3e64-45f1-9f8f-62a148e9134e.png)
+
+ -> For Enable Automatic Onboarding, it is recommended starting with this off and then turning it on after validating the registaration of a few API's.
+
+![image](https://user-images.githubusercontent.com/115025465/216435834-1e5dc15d-68a5-4855-b36e-113d20361943.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ Mulesoft API Gateway
+
+ Configure Mulesoft API Gateway via Connected App Credentials
+
+Prerequisites:
+
+1. Create a Connected App in the Mulesoft API Gateway. Please refer to the following [link](https://docs.mulesoft.com/api-manager/latest/manage-client-apps-connected-apps-concept)
+2. Select the following scopes in the Connected App:
+API Governance > Governance Viewer
+API Manager > View APIs Configuration
+Data Gateway > Data Gateway Viewer
+3. Retrieve Client ID and Secret to integrate Mulesoft API Gateway with APIsec
+
+Steps to integrate Mulesoft API Gateway with APIsec:
+1. Click API Gateways Tile on the APIsec Home page.
+![Screenshot 2024-01-19 110606](https://github.com/apisec-inc/documentation/assets/39483585/90c64991-0270-42b4-b8aa-b299f8168fad)
+2. Click Register Gateway
+![Screenshot 2024-01-19 111207](https://github.com/apisec-inc/documentation/assets/39483585/f0d298e5-f68a-4b6b-9232-e935735a81cf)
+3. Select Anypoint Platform from the Gateway dropdown
+![Screenshot 2024-01-19 110417](https://github.com/apisec-inc/documentation/assets/39483585/dddde524-9c0d-4b40-a4ea-e447f84fcfb7)
+4. Enter the ID and Secret obtained from the Mulesoft Gateway’s Connected App and click Test.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/236bfa7d-b78a-4b62-bcc7-f86c6dd8118d)
+5. Click Create to save the credentials
+
+Note: The create button is enabled after the test is successful. If the Test button throws an error, resolve the issue and restart the process.
+
+You may activate the Enable Automated Onboarding feature to register any new or unregistered APIs every week automatically. This job runs every Sunday at 9 PM GMT.
+
+In the case of the existing Mulesoft API Gateway configuration with a Username and password, the credentials can be replaced with the ID and secret in the settings tab. Please refer to the Prerequisites section above to create a Connected App and obtain a Client ID and Secret.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Projects Section
+
+The APIsec Home page has a Project section below the Services tiles. Once you Register an API, a Project is created and added in this section. The name of the Project is same as the API name you enter while registering the API.
+
+This section has two views. i.e, Grid and List view. You can select the one that works best for you. 
+
+`click` on the buttons above Project tile to switch the view. 
+
+Another useful feature is the 'Search' bar. User can search for the desired Project by the Project name. 
+You can also switch between 'My Projects' or 'All Projects' with the toggle besides the search bar. 
+
+- 'My Projects' only show the Projects created by the current user. 
+- 'All Projects' are restricted to admins only
+   
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119727-9ed6f766-02ae-44af-a115-bf88611e9df0.png"/>
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ Project Dashboard
+
+After registering the API, a Project tile is added in the 'Projects Section'. Users can view the Individual Project Dashboard by clicking on the desired Project tile or row. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120411-f011f054-d5cb-4424-9da2-269643ce1726.png"/>
+
+In the Project Dashboard you can view all the current project stats represented by figures and charts. You can initiate a scan, view scan history, and check project health status. Another useful feature is the list view of the 'Open/Closed Vulnerabilities' at the very bottom of the 'Project' page.  
+
+It also has 'Configurations' and 'Reports' pages that allows the user to configure the current API project as per the requirement and view or download detailed reports of the current Project pentest. 
+
+ 4.1. Project Overview 
+The 'Project Overview' page clearly displays all the stats of the current Project. All of the displayed stats are self-explanatory. But, the notable and most important ones are the Scan, Endpoints, Security Categories, and Playbooks tile. 
+The 'Select Environment' option allows you to select different API environments for testing. By default the environment is 'Master' but you can add and edit existing environments in the 'Configurations' page. 
+
+More details on the environment, Profile, and Playbooks are given in chapter 4.2. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120405-8e18be02-4d52-4b62-910b-0aa125a88eac.png"/>
+
+ 4.1.1. View Project Health Status, Scans & Activity 
+The 'Project Health Status' tile besides the pie charts shows the current status of the project. 
+
+- Environment: Shows the current environment, host and port project is configured on. By default the environment is "Master". Users can directly edit the project environment by clicking on "Master". If anything in red is mentioned here that means something was missed while 'Registering the API'. (more details in chapter 4.2.1.)
+- Credentials: Shows the environment credentials the project is set up with. You can directly edit or configure them by clicking on 'Edit Cred'. (more details in chapter 4.2.1.)
+- Playbook Health: Displays whether all of the available 'Playbooks' are compatible with the Project Environment and are ready for a 'Scan'. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/172059538-9712ab03-19c2-47f6-bac2-3fa8adfbc34f.png"/>
+
+-> All Scans: 
+
+You can view the details of all the 'Scans' performed on the Project. To view 'Scan' details, `click` 'All Scans' on the tile besides 'Monthly Scans'. 
+
+You can view detailed individual 'Scan' results by clicking on desired scan from the list. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/172059531-765e9d3c-2ee5-4bbe-82a6-b60b42e2d915.png"/>
+
+
+-> Activities:
+
+You can view the activities performed by all of the users on the project. Logs generated for the particular activity can be viewed by clicking on "file icon" in front of the activity. 
+
+To view the activities, `click` 'Activities' under the 'All Scans'. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/172059535-f46b3dcc-eb01-48da-9449-407b0a516deb.png"/>
+
+This is the logs view of the activity. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/172059536-ccad5dc8-b293-4be8-b70a-bf640fa480a1.png"/>
+
+ 4.1.2. View Endpoints & Edit the API Source Code
+The Endpoints tile on the 'Project' page shows the total number of endpoints the registered API has. When you click on this tile, it redirects the you to a page where details of all the Endpoints are given. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120370-1921ea90-c6e5-4383-bf6c-d9ca3f6c1a2a.png"/>
+
+The notable feature on this page is that it provides you an option to edit the API source code with an OAS Editor. 
+
+Note: if you are not a tech-geek please do not attempt using this feature. This requires a deep understanding of APIs and programming them.
+	
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120371-157830ab-e3da-4a32-a70d-ca86423b7f94.png"/>
+
+ 4.1.3. Initiate a Scan 
+The important feature on the 'Project' page is the 'Scan'. You can initiate a Scan on the current Project by clicking on the blue `scan` tile on the right of the page. 
+
+Before initiating a scan, you need to do quick configurations which includes:
+
+- Profile: Select the environment and profile to run the scan on. (more details in chapter 4.2.3.)
+- Scanner: Select a Public or Private Scanner. (scanner details in chapter 7: Deploy Scanners)
+- Categories: Select the Security Category(s) to test against the API. (more details in chapter 9)
+
+You can initiate a Scan by clicking on 'Submit' or go to the 'Advanced' section for more custom settings. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120373-ee56e49c-bc17-42f3-9cfe-488c5f2ad0ef.png"/>
+
+The Advanced section requires following information: 
+
+- Resources: Select the API resources to include in the Scan. 
+- Endpoints: Select the API endpoints to include in the Scan. 
+- Playbooks: Add custom Playbooks for the Scan. (more details in chapter 4.2.4.)
+
+Also, you can select the check box 'Email report after scan completion' to receive the Scan report on your registered email.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120377-f0497554-816a-49c8-a3fb-38398ae410d0.png"/>
+
+When a user clicks on 'Submit', the Scan is initiated. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120382-6400120c-3691-41a0-839b-11ea3ac0d6d5.png"/>
+
+After the Scan is completed, it displays all the results. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120387-93bed09c-6037-4774-bf92-21376f375ba3.png"/>
+
+This page gives the details of Playbooks against the API and their outcome. You can view logs and Analytics of each playbook separately by clicking on the buttons under 'Analytics' column. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120388-6aa24b41-9b76-4dcc-91a1-eb56be8d00b5.png"/>
+
+This is the log view. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120390-ad397858-7298-4125-8c26-62aeb6ce98d2.png"/>
+
+This is the Analytics view. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120392-d8f974ac-9589-4e99-8f2d-0effd4b95ba3.png"/>
+
+
+ 4.1.4. View Open Vulnerabilities
+At the bottom of the 'Project' page, the list of Open Vulnerabilities appears after the Scan. 
+You can view the details of each vulnerability by clicking on it. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120396-257c5d32-ff2c-457b-bc7b-e3980e00c98c.png"/>
+
+It allows a you to perform certain actions like downloading the reports, closing the vulnerabilities, viewing RBAC map, or view the list of closed vulnerabilities.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166120397-a6e5249a-91ab-4158-b949-f7155fea450b.png"/>
+
+If a you click on any 'Open Vulnerability' then you will be redirected to vulnerability details page. This page contains all of the information about the particular vulnerability including the logs and remediation techniques. You can perform certain actions that include: 
+
+-Will ask you to perform another scan. This way a you can verify if it was a false positive.
+
+-Will discard/close the vulnerability and deactivate the 'Playbook'. This means that this test will not longer run for this endpoint
+
+-Will add a 'Unsecure' flag to that particular endpoint. This can be done for segmentation of secured and unsecured endpoints. This option will only show up for authentication type vulnerabilites
+
+-Will completely remove the vulnerability from the record.
+
+-Will close or archive all the vulnerabilities. Those particular vulnerabilities will not appear under 'Open vulnerabilities' section.
+
+-Allows the you to mark the vulnerability 'reviewed' for others to see.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/115025465/216442113-0fec7e42-1795-4c2c-abec-09fb7ee0ccd2.png"/>
+
+ 4.2. Configurations Page
+The 'Configurations' next to the 'Project' tab takes you to the Project configuration page. 
+This page is the control panel of the Project, where you can play around with:
+
+- Environment & Credentials
+- Variables
+- Profiles
+- Playbooks
+- Categories
+- Payloads
+- Integrations 
+- Details 
+
+Please note that all the settings will be limited to the current Project only. Every Project needs to be configured separately from the respective 'Project Dashboard'. 
+
+
+ 4.2.1 Set up the Environment & Credentials 
+This page allows you to add, edit, and delete the current API testing environment and the API user-login credentials. 
+
+-> Environment Details: 
+
+When a you register the API, the API environment is created. The default name is
+"Master" and the base URL is the API URL registered. You can add or clone an environment by clicking on the ellipsis besides the scroll bar. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322125-4ed05c51-099d-47e0-aff5-4344836e7313.png" />
+
+when you click on the 'Add Env' then you are redirected to the below page. Enter the "Name" and the "Base URL", and `click` 'Create' to add a new environment.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322136-23db9348-cb59-4bd5-ac67-50c2f6c9db60.png" />
+
+The 'Clone Env' option creates a copy of the current environment. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322166-ee2afa5a-4a48-4415-8e50-5b26958f6d34.png" />
+
+-> Authentications:
+
+The 'Authentications' list contains all the 'Credentials/Tokens' previously provided while registering the API. You can also add and edit them on this page. 
+
+It is mandatory to have a "Default" an "Invalid_Auth" authentications in a every environment for security testing. 
+
+- "Default" contains default credentials 
+- "Invalid_Auth" contains invalid credentials
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322177-f11b57a3-58ef-4d43-a01e-2e413af2c32c.png" />
+
+To add an authentication;  `click` on 'Add Auth' under the ellipsis menu. 
+For adding an authentication, provide the "Name", select "Authentication Type". 
+
+The credentials requirement varies with the selected type. Most of them require username and password.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322180-9d2c40da-d670-4bdf-8fc0-389f1e5da6b6.png" />
+
+You can bulk-add the authentications by clicking on 'Bulk Add Auths' under the ellipsis menu. The explanation is provided in Section 1.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322184-b5a67179-32ea-4b34-a2e0-df78455691f6.png" />
+
+To test the added authentication; `click` on the name from the list, then `click` on 'Test Authentications'. You can test all of the authentications by clicking 'Save & Test All Auths' button at the very bottom of the page. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322195-2f4752a9-811b-4767-a8d5-d79924b846c2.png" />
+
+If the authentication is valid then a pop-up will appear (like the screenshot below) and the status will change from "Not Working" to "Working". 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322209-0f992f25-f514-48b1-8d6e-c69507c97d7a.png" />
+
+ 4.2.2. Configure the Variables 
+This section allows you to add, edit or delete the API variables. Initially they are auto-fetched when the API is registered. You can add new variables and modify the ones already existing. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322216-8bb34752-ad1e-4f4c-84bb-c5377e759fc5.png" />
+
+To add a new variable;  `click` on '+ New Variable' and provide the required values as shown in the screenshot below. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322221-e29675a2-7a68-4d50-a2a8-7f131be66057.png" />
+
+To add variables in bulk; `click` on '+ New Variables (Bulk)' and provide the required values as shown in the screenshot below. 
+You can upload an excel file or enter all the variables in text box according to the format mentioned in the comment box. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322231-c5a5644a-2c5d-4c2f-8d05-d29fd35ab62e.png" />
+
+ 4.2.3. Set up the Scan Profile
+This section allows you to set up the scan profile(s) for the Project environment. You can configure the profile(s) for different environments.  
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322239-dad43e5b-41d7-4c7d-a93a-56937e20224f.png" />
+
+To add a new profile; `click` on '+ New Profile'. Provide the required values as shown in the screenshot below. Also, you can schedule the time for performing daily scans on the selected API environment. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322248-4e624444-6835-4168-ba82-c24804459283.png" />
+
+There are already existing profiles which are automatically created when an API is registered and the environment is configured. You can edit these profiles and schedule daily scans on them. 
+
+APIsec provides "Trainning Profiles". The only difference in these profiles is that they do not track vulnerabilities. These profiles are for beginners who want to learn through exploring. 
+
+ 4.2.4. Play with Playbooks
+Playbooks execute the payloads against the configured tyarget API + environment. APIsec has a over 1200 Playbooks but the number of Playbooks available for scanning are 229. As of now, 994 new Playbooks are added to the APIsec central repository. New Playbooks are constantly added and released for use in the product. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322252-48bc0770-055a-448d-93ca-3a6d835ab6ce.png" />
+
+The "Coverage Breakdown" pie chart shows the categories of Playbooks and total number of Playbooks in each category. When a you click on a slice of pie chart, all of the Playbooks in that 'Security Category' appear below.  
+
+The "Playbook Trend" graph next to the pie chart represents the trend of Playbooks. From April 23, 2022 till the time of writing this document, The total number of Playbooks remained constant i.e, 1223. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322263-6385877d-0a02-40db-8777-f32448f18c09.png" />
+
+The section below the figures contains the list of Playbooks. You can filter the Playbooks by categories, working, new addition or all Playbooks. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322271-36d859a2-3fef-44f1-9d16-db7905d0eac1.png" />
+
+-> Create a New Playbook:
+
+To create a new playbook, `click` on '+ New Playbook'. 
+
+The Playbook script text editor has the template with comments. Someone with relevant technical background can understand the template from comments and write or edit the script. 
+You also need to choose the Playbook type. Only 'POST Playbook' option is currently available, if the new Playbooks needs to have a POST method then choose this type.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322282-f65904a7-3541-4e90-a06f-fc9e5c70816f.png" />
+
+-> Bulk Create/Delete Playbooks:
+
+You can bulk add and delete the playbooks based on the 'Security Category(s)'. 
+
+To create Playbooks, select the category(s) and `click` submit. APIsec auto-generates the Playbooks for the selected category. "Authentication Exploit" in the example. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322294-26ac1b5a-f8db-445f-a4e6-bd6b0bf49069.png" />
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322307-bee36551-0dc6-481f-9b03-e30ee0626d91.png" />
+
+You can bulk delete the Playbooks via 'Delete Playbooks' option. 
+
+-> Edit the Playbook(s):
+
+APIsec also allows the you to edit the pre-built or user added Playbooks and propagate the changes across the platform.
+
+To edit a Playbook, `click` on the desired Playbook. 
+You can edit the script with the text editor and save the changes. You can perform a Scan on the API using that particular Playbook only. 
+
+To perform a Scan; select an environment, select a scanner, and `click` on Scan. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322314-d4593de5-18b4-48c6-a49e-8eb9da738cb7.png" />
+
+The ellipsis on the top right of this pop-up contains different options to propagate the changes. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322323-99c55a8a-f324-4c82-8022-0d5af4a83675.png" />
+
+ 4.2.5. Categories 
+The categories on the 'Configurations' page are the same as the 'Security Categories' (chapter 9) option in the 'Services' menu.
+APIsec has a total 118 categories. 34 are currently active and 84 are inactive. The inactive categories are activated as needed.
+
+You can switch between 'Tiles View' and 'List View' as needed. You can Apply the filters like All, Active, Inactive, and Type on the categories. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322337-7a0da67f-a085-45d3-b8db-94d3567d59a4.png" />
+
+To view the details of a category and configure the attack scenarios, `click` on the tile of desired category.
+
+The page shown below contains:
+
+- Name
+- Overview
+- Severity
+- Vulnerability Impact
+- Exploitation
+- Remediation
+- References
+- Attack Scenarios 
+
+There are some configuration options at the bottom of page. These are explained in chapter 9. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322342-2bb8c105-87be-430a-931d-6a12d99385ed.png" />
+
+To add a new attack scenario, `click` on '+ Add Attack Scenarios' and provide the required values.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322349-96a92f14-90b8-45b9-b058-2df1388b316a.png" />
+
+To edit already added attack scenario, `click` on the desired one from the list.
+
+When configurations is complete you can choose to only save the changes or 'Save and Rewrite Playbooks'. If major changes are done then it is recommended to `click` on 'Save and Rewrite Playbooks'.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322360-a718207f-64b3-4e48-913d-103d28c9ed77.png" />
+
+
+ 4.2.6. Payloads
+APIsec has 4 types of Payloads:
+
+1. Default
+2. Injection
+3. Stored Injection
+4. Access Based Authentication Control (ABAC)
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322365-98ea5cdb-506b-48af-9acb-d8d6add15b80.png" />
+
+These payloads are used by Playbooks to exploit the vulnerabilities in the API. If a you edit any payload then you needs to re-configure the relevant Playbook(s).
+
+To edit a Payload, `click` on one from the list. Once the payload is edited, you can 'Lock & Save' or 'Save' or 'Save & Propagate'. The later option saves and propagates the changes across all the Playbooks.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322375-cd27c695-f07b-469b-ae24-46b0cc1c3790.png" />
+
+ 4.2.7. View the Details of Project
+This view contains all of the details about the registered API in the current project. The details include 
+- API source code
+- API Name
+- API document or URL
+- Collaborators 
+
+The 'API project' page contains the details about the API. 
+
+ <img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322454-7b93ea21-e494-4eac-aa1e-83152001541a.png" />
+
+The 'Collaborators' view allows you to assign registered users for managing the project. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322472-3e0dbe24-1a26-463a-b2fc-483facae18a3.png" />
+
+'OpenAPI Spec' contains the API code. Non OAS is empty because the registered API format is the OpenAPI Specification. If the API is in any other supported format then the API code will appear in Non OAS. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322481-09ff0707-baf8-4909-a913-1db1919fc393.png" />
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+  Configurations overview  
+
+From the main APIsec landing page, the configuration page is used to configure global settings that include:
+-  Integrations for Reports, Issues Trackers, Notifications,  Playbooks Backups and SSO
+-  Teams which is used to create and manage teams of users
+-  API Groups for creating groups of API projects that can be used for various functions
+-  Skip Endpoints for global management of skipping endpoints for desired categories across projects
+
+![ConfigurationsMenui](https://github.com/apisec-inc/documentation/assets/115025465/52620534-5b17-435e-8dba-9ff9beed9705)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+  Integrations overview 
+
+The APIsec allows you to integrate you project with a number of platforms.  Integrations provide connectivity across platforms and automate the processes. 
+
+ 5.1. Reports Storage
+You can export reports to AWSS3, GCP, and Azure cloud accounts.  The reports are sent automatically at the beginning of every month.  If you have stored the credentials for the Report Storage account in the vault, it can be used or you can add new credentials.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322387-9309887a-5b8f-4df0-9241-fd71bbe0f666.png" />
+
+The process of adding the new credentials is explained in Vault section. 
+
+Note: When you add New Credentials, for the Account Type selection dropdown menu, select your application from the Report Storage section as shown in the screenshot.
+
+<img width="918" alt="report-storage-account-type-selection" src="https://user-images.githubusercontent.com/109250250/180295807-4c20f2ff-d4fa-4abb-8b48-018203fd2669.png">
+
+ 5.2. Issue Tracker
+The Issue Tracker automates the process of vulnerability life-cycle management by providing the option to integrate issue tracking a wide range of platforms like Trello, GitHub, Jira, etc.
+
+This can be setup by choosing the Profile and the Issue Tracker.  This example shows 'APIsec Issues'.  All of the vulnerabilities will be logged in the APIsec Project Dashboard. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322396-cb3d863e-f920-4113-b1d9-2f0bab92c71c.png" />
+
+You can choose the Issue Tracker system that best suits your requirements.  The credentials vary with the chosen system.  The process for adding the new credentials of the Issue Tracker system is the same as explained in the vault documentation.
+
+ 5.3. Notifications
+Notifications allow you to integrate Slack Channels with the Project for receiving notifications and Scan Reports. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322407-4b47066a-992b-4985-a88c-38a14359a654.png" />
+
+ 5.4. Git Backup
+With this feature, you can integrate a Git source code repository for backing up Configurations, Playbooks, and other APIsec Project files.  It also allows the security engineers to collaborate as a team for adding Playbooks, Payloads, etc. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322418-f6ab37d5-4eaa-48be-8411-855b3b233ad2.png" />
+
+ 5.5. CI/CD
+APIsec offers an amazing feature for terminal / command line users to trigger on-demand scans via external CI/CD Systems.  It supports ten CI/CD platforms that include AWS, GitHub Actions, Jenkins, MS Azure Pipelines and more. 
+
+Note: The JQ and wget commands are prerequisites for this set up.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322423-aa08bb33-0362-4c67-82d3-b74282bfe944.png" />
+
+ 5.6. Configure Single Sign-On
+
+ 5.6.1. Okta account
+This option is available in the 'Integrations Tile'.
+
+![APIsec screenshot](https://github.com/apisec-inc/documentation/assets/105206963/29130297-9d73-4217-b9f7-ee152c3ea673)
+
+Click on the 'SSO tile' and select the integrations type as Okta.
+
+![Screenshot 2023-07-25 121143](https://github.com/apisec-inc/documentation/assets/105206963/2d87e108-f9c4-4b1d-9557-260de7d8df71)
+
+A guide on ['How to Configure OKTA SSO for APIsec?'] is also available in the instructions which can be accessed by clicking on the question in blue.  The link redirects you to a Google doc. (https://docs.google.com/document/d/1u0_Gw0qSBRztOiW-iUn6BkghZhijr49FtRjKdAmVJAU/edit)
+
+ 5.6.2. Azure AD account
+This option is available in the 'Integrations Tile.
+
+![APIsec screenshot](https://github.com/apisec-inc/documentation/assets/105206963/29130297-9d73-4217-b9f7-ee152c3ea673)
+
+Click on the 'SSO tile' and select the integration type as Azure AD.
+
+![Screenshot2](https://github.com/apisec-inc/documentation/assets/105206963/086f308a-20ce-4ecb-b038-4ad5470059d3)
+
+
+A guide on 'How to Configure Azure SSO for APIsec?' is also available in the instructions which can be accessed by clicking on the question in blue.
+The link redirects you to APIsec docs.(https://docs.apisec.ai/AzureSSOConfig/)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Github Issue Tracker Set up
+
+This document outlines the steps to setup your Github account with APIsec.  
+
+The expectation is that you already have an account with Github or know how to set one up.  
+
+1. From the homepage select your project > Then, select the `Configurations` tab.
+2. Select the `Integrations` tab from the top menu.
+3. From the left menu select `Issue Tracker`.
+4. Choose an Environment Name Profile.
+5. Select `Github` for the Issue Tracker.
+6. Create New Issue Tracker Credentials by clicking on the button.  Or, select from the Credentials dropdown if it's already created. You can create a new user with read/write access to the test repository.
+
+- Note: You'll need generate an API token to add your Github account. You can find more information how to set up Personal Access Token on their website.
+   
+   <img width="908" alt="github-login-popup" src="https://user-images.githubusercontent.com/109250250/180657758-b2192004-a117-4f1e-8f58-a680c86d7085.png">
+
+7. Once you add the credentials, add the Issue-Tracker URL.
+
+The following fields are optional:
+
+8. Assignee Username.  The Github username of the assignee must be a collaborator with write access.
+
+Activating the toggle button will log the vulnerabilities to Github.
+
+Finally, click on `Test Credentials` button to validate the connection has established and click Save.
+
+If everything is setup correctly, you'll see Valid Credentials message at the bottom of the screen.
+
+<img width="1358" alt="github-valid-creds" src="https://user-images.githubusercontent.com/109250250/180657674-72c3be7f-10b3-4302-aa83-bd1a3aca351c.png">
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ Jira Issue Tracker Set up
+
+This document outlines the steps to setup your Atlassian Jira account with APIsec.  
+
+The expectation is that you already have an account with JIRA or know how to set one up.  
+
+1. From the homepage select your project > Then, select the `Configurations` tab.
+2. Select the `Integrations` tab from the top menu.
+3. From the left menu select `Issue Tracker`.
+4. Choose an Environment Name Profile.
+5. Select `Jira` for the Issue Tracker.
+6. Create New Issue Tracker Credentials by clicking on the button.  Or, select from the Credentials dropdown if it's already created. You can create a new user with read/write access to the test repository.
+
+   Note: You'll need the your email and and API token to add your JIRA account.
+   
+   <img width="899" alt="new-issue-tracker-creds" src="https://user-images.githubusercontent.com/109250250/180610320-e877267c-11e6-42fd-9158-d1d5e34159c3.png">
+
+7. Once you add the credentials, add the Issue-Tracker URL.
+8. Add the Project Key.  Should match the key value from Jira/Atlassian project page.
+
+The following fields are optional:
+
+9. Assignee Account ID. e.g. https://mycompany.atlassian.net/
+10. Label should be a single word without any white spaces. If more than one label to be tagged, provide comma (,) seperated labels.
+   `label1,label2,label3`
+
+Activating the toggle button will log the vulnerabilities to Jira.
+
+Finally, click on `Test Credentials` button to validate the connection has established and click Save.
+
+If everything is setup correctly, you'll see Valid Jira Credentials message at the bottom of the screen.
+
+<img width="1495" alt="jira-valid-creds" src="https://user-images.githubusercontent.com/109250250/180609364-42943462-c306-4257-888b-447bc7998667.png">
+
+Once the account is set up, you'll start to see tickets getting created with any vulnerability that's detected as shown in the screenshot below.
+
+<img width="1504" alt="jira-issues logged" src="https://user-images.githubusercontent.com/109250250/180658369-5c672a22-9b4f-4a7d-9cad-40731edbb3e2.png">
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ JupiterOne IT Integration
+
+Step1: Go to the Integrations section in the APIsec platform and select Issue Tracker from the left-side menu.
+
+Step2: Select JupiterOne from the issue tracker dropdown as shown in the image below.
+
+<img width="870" alt="Screen Shot 2022-10-18 at 14 04 11" src="https://user-images.githubusercontent.com/109250250/196521157-30a26468-8960-46e9-b961-c99219d53de5.png">
+
+Step3: For adding Jupiter one credential click New Issue Tracker Credentials button. It will open a window as shown below.
+
+<img width="862" alt="Screen Shot 2022-10-18 at 14 04 20" src="https://user-images.githubusercontent.com/109250250/196521331-ba2fdf04-f214-4c0f-a4c7-1cae202b1e9e.png">
+
+Enter the name, select Issue Tracker type as JupiterOne and add the API key. In order to get the API key click here is a hyperlink, it will navigate to the Jupiter one account key section as shown below.
+
+<img width="864" alt="Screen Shot 2022-10-18 at 14 04 27" src="https://user-images.githubusercontent.com/109250250/196521423-8871e73f-0336-49eb-b654-cf53fe848ec7.png">
+
+Create a new key by clicking the Plus icon on the right top. After creating the key copy and paste it into the APIsec platform and save the details.
+
+Step4: After adding the key, select the Issue Tracker credentials added in step 3 and add the account Id.
+
+<img width="867" alt="Screen Shot 2022-10-18 at 14 04 35" src="https://user-images.githubusercontent.com/109250250/196521480-a6b63be8-c4f6-4504-a3ae-85dd3a80b547.png">
+
+To get an account Id, click here hyperlink to navigate to the account management page on Jupiter one platform as shown below.
+
+<img width="865" alt="Screen Shot 2022-10-18 at 14 04 41" src="https://user-images.githubusercontent.com/109250250/196521539-144a5b14-ea49-439e-95b8-4ba2a55911ae.png">
+
+Copy the Account Id and paste it into the APIsec platform. And hit the Test Credentials button, if it says Valid credentials, the configuration is successful and APIsec is ready to log Vulnerabilities in JupiterOne.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Linear IT Configuration
+
+Step1: Go to the Integrations section in the APIsec platform and select Issue Tracker from the left-side menu.
+
+Step2: Select Linear from the issue tracker dropdown as shown in the image below.
+
+<img width="1194" alt="Screen Shot 2022-10-18 at 13 45 54" src="https://user-images.githubusercontent.com/109250250/196518443-8653ac7d-5963-4ccf-aa05-5925d2fac871.png">
+
+Step3: For adding Linear credentials click New Issue Tracker Credentials button. It will open a window as shown below.
+
+<img width="1193" alt="Screen Shot 2022-10-18 at 13 46 07" src="https://user-images.githubusercontent.com/109250250/196518596-e64ca72d-1e83-4797-83e1-b863a5ab6195.png">
+
+Enter the name, select Issue Tracker type as Linear and add the API key. In order to get the API key click here is a hyperlink, it will navigate to the Linear API key section as shown below.
+
+<img width="1127" alt="Screen Shot 2022-10-18 at 13 46 24" src="https://user-images.githubusercontent.com/109250250/196518660-530d7434-f585-454c-91d6-3731a2c6f648.png">
+Create a new API key and copy & paste it into the APIsec platform and save the details.
+
+Step4: After adding the key, select the Issue Tracker credentials added in step 3 and add the team Id.
+
+To get the team Id select the team in linear and hit CMD+k or CTRL+k it will open the dialogue and type Copy model UUID and select developer as shown below.
+
+<img width="1192" alt="Screen Shot 2022-10-18 at 13 46 42" src="https://user-images.githubusercontent.com/109250250/196518765-d893605c-3fbb-413c-aac9-0e955339cd59.png">
+
+After that, it will show the team name with the Id as shown in the image below.
+
+<img width="618" alt="Screen Shot 2022-10-18 at 13 46 58" src="https://user-images.githubusercontent.com/109250250/196519047-c5321956-352a-4e70-8ba8-47138f86ae07.png">
+
+Select the team it will copy the UUID and add it to the APIsec platform.
+
+<img width="1097" alt="Screen Shot 2022-10-18 at 13 47 06" src="https://user-images.githubusercontent.com/109250250/196519139-a1a3ac23-5474-4b4a-9d53-8989a5d8d2fc.png">
+
+Hit the Test Credentials button, if it says Valid credentials, the configuration is successful and APIsec is ready to log Vulnerabilities in the Linear platform.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ Wrike IT Configuration
+
+Step1: Go to the Integrations section in the APIsec platform and select Issue Tracker from the left-side menu.
+
+Step2: Select Wrike from the issue tracker dropdown as shown in the image below.
+
+<img width="1012" alt="Screen Shot 2022-10-18 at 14 10 05" src="https://user-images.githubusercontent.com/109250250/196522388-199e1d16-a414-46c4-b547-40b40c01a56e.png">
+
+Step3: For adding Wrike credentials click New Issue Tracker Credentials button. It will open a window as shown below.
+
+<img width="1012" alt="Screen Shot 2022-10-18 at 14 10 11" src="https://user-images.githubusercontent.com/109250250/196522469-37c11a4a-5082-42f4-9e93-077ce96e91ad.png">
+
+Enter the name, select Issue Tracker type as Wrike and add the Access token. In order to get the access token, click here is a hyperlink, it will navigate to the Wrike account. In the Wrike account, from the left-hand menu select API and create a new API app by entering the name. key section as shown below.
+
+
+<img width="1012" alt="Screen Shot 2022-10-18 at 14 10 23" src="https://user-images.githubusercontent.com/109250250/196522546-64004d0f-485e-4ce0-9333-7272155e1a84.png">
+
+After creating the App scroll down and create a Permanent access token. Copy the token and add it to the APIsec platform.
+
+<img width="909" alt="Screen Shot 2022-10-18 at 14 10 38" src="https://user-images.githubusercontent.com/109250250/196522558-a3061327-c1b0-47b6-aba5-1d03db59ae6a.png">
+
+Step4: After adding the token, select the Issue Tracker credentials added in step 3 and it will list the projects and folders from the Wrike account select any project or folder and save to log the vulnerabilities from APISec.
+
+<img width="918" alt="Screen Shot 2022-10-18 at 14 10 47" src="https://user-images.githubusercontent.com/109250250/196522840-5c552a95-ea43-465a-a636-be911374e101.png">
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Synopsis Code DX Integration
+
+Step1: Go to the Integrations section in the APIsec platform and select Issue Tracker from the left-side menu.
+
+Step2: Select any issue tracker to view New Issue Tracker Credentials button as shown in the image below.
+
+![issue tracker creds](https://user-images.githubusercontent.com/105206963/219672275-3030cc36-0ec1-4245-b409-51ae0ef61851.png)
+
+Step3: For Synopsis Code DX click New Issue Tracker Credentials button. It will open a window as shown below.
+
+![image](https://user-images.githubusercontent.com/105206963/219674797-395d0d7f-64a1-4de8-ae46-a98047473fd6.png)
+
+Step4 : Enter the name, select Issue Tracker type as Synopsis Code DX as shown in the image below.
+
+![synopsis code dx](https://user-images.githubusercontent.com/105206963/219676467-d16971a7-6646-4abc-8d4f-21f850284961.png)
+
+Step5: In order to get the more information click here is a hyperlink, it will navigate to the Synopsis Code DX page as shown below.
+
+![image](https://user-images.githubusercontent.com/105206963/219675763-4eecfe90-2f9e-4fa5-9755-ba2b1413cb7d.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ Playbook Backup and Restore
+
+ Steps to Configure GitHub Playbooks Backup and Restore
+
+1. GitHub Credentials in APIsec can be saved via Personal Access Token or SSH 
+
+1.1 To configure GitHub Credentials in APIsec via Personal Access Token
+
+Step 1: Generate the PAT in Github.
+To generate the PAT refer to the following GitHub documentation. Select the below scopes while generating the PAT.
+1. Full control of private repositories
+2. Update GitHub Action workflows
+3. Read org and team membership, read org projects
+4. Create gists.
+Once the scopes are selected, the PAT is generated.
+
+Step 2:  In the APIsec project, Go to Configurations > Integrations
+Click on Git Backup > +New Credentials. A New Credentials Pop-Up window appears.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/702c6fc7-6a18-436c-b303-eeeeae42b7f9)
+
+Add a name for the credential along with the Personal Access Token. 
+Click on Add. The credentials will be saved in the APIsec Vault.  
+
+1.2 Backup Playbooks in GitHub 
+Step 1: Go to GitHub and create a new Repository with a README file. Copy the 'Git Repository HTTPS URL'  as shown in the below image.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/8a13b4ee-42b3-4f3a-999b-f0be228b7768)
+
+Step 2: Go to Configurations > Integrations > Playbook Backup in the project of APIsec.
+Paste the GitHub repository URL extracted from Step 1 under the GitHub repository URL field. Now click on the 'GitHub access credentials' dropdown and select your registered credential. Click Save and enable the Active toggle button.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/084fbeef-369f-4c06-b5d6-61f0dcf95216)
+
+Once these configurations are completed, the playbooks will be auto-synced into your GitHub repository.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/3dab1fd8-5099-4cd6-89b4-796d32c443f6)
+
+2.1 To configure credentials for GitHub Playbooks Backup via SSH 
+Step 1: Open a Git Bash terminal on your local machine.
+Step 2. Enter the following command: ssh-keygen -t ecdsa -m PEM to generate the Public and Private keys.
+Step 3. The generated keys will be stored on your local drive. Extract the Public key from your drive and paste it into your GitHub account under the GitHub SSH Settings.
+Step 4. Go to Configurations > Integrations > Playbook Backup in the project of APIsec.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/552446e4-2ab5-4f49-8c95-9dc32d797e54) 
+
+Click on Playbook Backup > +New Credentials. A New Credentials Pop-Up window appears.
+Add a name to this credential. Retrieve the Private key generated in Step 2 from your local drive, paste it into the Private Key field, and click on Add. The credentials will be saved in the APIsec Vault. 
+
+2.2 Backup Playbooks in GitHub 
+Step 1: Go to GitHub and create a new Repository with a README file. Copy the 'Git Repository SSH URL'  as shown in the below image.
+![Screenshot 2024-02-09 191341](https://github.com/apisec-inc/documentation/assets/39483585/19b5f01f-433b-42d2-9c7f-9ce5402451e4) 
+
+Step 2: Go to Configurations > Integrations > Playbook Backup in the project of APIsec.
+Paste the GitHub repository URL extracted from Step 1 under the GitHub repository URL field. Now click on the 'GitHub access credentials' dropdown and select your registered credential. Click Save and enable the Active toggle button.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/98de010c-4cae-4c36-9016-35c283954b8e) 
+
+Once these configurations are completed, the playbooks will be auto-synced into your GitHub repository. 
+
+Steps to Restore Playbooks from the GitHub Repository 
+Step 1: Once the GitHub Credentials are configured and the playbook backup has been done as described in the 1.1 and 2.1 sections, the playbooks can be restored in APIsec. For this, Go to Configurations > Playbooks 
+
+Step 2: Click on Bulk Create/Delete Playbooks. Select All from the categories drop-down list. Check Delete Custom Playbooks and click Submit.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/d596d82b-fd4f-46b6-9575-c4b075cdeb23) 
+
+Step 3: Go to GitHub and open the Repository where the playbooks have been backed up. Copy the 'Git Repository URL'  as shown in the below image.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/289e20ea-d139-418c-94fa-f34df8c749c2)
+
+Step 4: Go to Configurations > Integrations > Playbook Backup in the project of APIsec.
+![image](https://github.com/apisec-inc/documentation/assets/39483585/b87114e4-caeb-4941-95b4-8b315a7e3e67)
+
+Paste the GitHub repository URL extracted from Step 3 under the GitHub repository URL field. Now click the 'GitHub access credentials' dropdown and select your registered credential. Click Save and enable the Active toggle button.
+
+Once these configurations are completed, the playbooks will be auto-synced into APIsec from the GitHub repository.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+  API Groups
+
+API Groups are a way to bundle together API projects into a group that is appropriate for your organization. In this first version, the use of API groups is for managing collaborators. on projects without having to do this one at a time.
+
+![APIGroups](https://github.com/apisec-inc/documentation/assets/115025465/412cfbee-c237-4650-bdb2-52a645338bd4)
+
+In order to create a group, click the New API group button and then give a Group Name and Description. Utilize the button on the right to select the API's that should be part of this group.  You are then able to either add a list of teams that should have Collaborator access to the API projects that are part of the group - or leave this entry blank to be filled in later.
+
+![New Group](https://github.com/apisec-inc/documentation/assets/115025465/68bc93f7-9e97-4629-b6a1-fffa4ed3235f)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+  Teams
+
+The Teams screen is used to create and manage teams of users. The purpose of this is to enable easier management of access to projects for teams of users.  
+Instead of adding a user one at a time as collaborator at projects, if a user is part of team that is assigned to an API group, they automatically will receive
+Project Collaborator access to the API Projects that are members of the group.
+
+![TeamsScreen](https://github.com/apisec-inc/documentation/assets/115025465/fd32f946-3b9e-420c-a2ac-58354d6d3330)
+
+In order to create a new team, navigate to the Teams Sceen (Dashboard-->Configurations-->Teams) and click the New Team button. Fill in the Name, Description and select the users(s) that 
+should be part of this team. Then click Create.
+
+![CreateTeam](https://github.com/apisec-inc/documentation/assets/115025465/69d4fe28-2da3-42a4-a47b-ba05b1bcd3cc)
+
+In order to edit a team, simply click the row that you are interested in editing and make the appropriate changes.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ How to Configure OKTA SSO for APIsec
+
+This setup might fail without parameter values that are customized for your organization. Please use the Okta Administrator Dashboard to add an application and view the values that are specific for your organization. 
+
+If you have not yet added the APISec app to your Okta organization please follow the below instructions :
+
+- Sign in to your Okta organization with your administrator account.
+- In the Admin Console, go to Applications > Applications.
+- Click Browse App Catalog.
+- Enter APIsec in the Search... text box
+- On the catalog page for the app integration, click Add.
+- Enter a label for your copy of this app integration. Click Done to add this to your org.
+- On the Assignments tab, click Assign to assign the app integration to any user or group in your org. Click Done when the assignments are complete.  
+
+ Supported Features :
+
+The APISec Okta SSO  integration currently supports the following features:  
+-  IdP-initiated SSO  
+-  JIT (Just In Time) Provisioning
+
+For more information on the listed features, visit the Okta Glossary.
+
+ Configuration Steps :
+  
+  - Sign in to Apisec with the organization Admin account at 'https://cloud.apisec.ai'
+
+    ![OKTAImage1](https://github.com/apisec-inc/documentation/assets/87167426/122a817c-fb90-4567-adfe-c29801ded80d)
+
+  - Click on Configurations Tile
+
+    ![OKTAImage2](https://github.com/apisec-inc/documentation/assets/87167426/cc7b935a-9edc-4919-b0a1-b658d1433475)
+
+  - Click on SSO Tile Under Integrations and Select SSO Type as OKTA from the Dropdown.
+  
+    ![OKTAImage13](https://github.com/apisec-inc/documentation/assets/87167426/2bd586db-2c3c-42ba-a69c-0c1666353426)
+
+  - Enter Issuer, Client-ID and Sign-In URL.
+  - Issuer : Copy and paste the following:
+        - In Okta , Issuer URL is the https://your-domain.okta.com
+  - Client-ID : Copy and paste the following:
+        - In Okta, select the Sign On tab for the APIsec and copy the Client ID.
+    
+    ![OKTAImage4](https://github.com/apisec-inc/documentation/assets/87167426/e03c1a5e-15a2-492e-80ee-2aa0a4ae560b)
+
+  - App Embed Link : Copy and paste the following:
+        - In Okta, select the General tab for the APISec and copy the Embed Link.
+
+    ![OKTAImage5](https://github.com/apisec-inc/documentation/assets/87167426/49447dbe-5e73-4dc0-944f-609df37b1fec)
+
+  - Click Save.
+
+ Notes : 
+ Make sure the URL does not have any extra slash at the end in the issuer field under the SSO Settings tab in APIsec. Using the wrong value will prevent you from authenticating via OIDC to APIsec.
+  Eg: https://your-doman.okta.com
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ How to Configure AZURE SSO for APIsec
+
+
+ Configuration Steps
+
+1.  Actions to Perform to setup  AZURE AD :  
+    - Sign in to the Azure portal. (https://portal.azure.com).  
+    - If you have access to multiple tenants, in the top menu, use the Directory + subscription filter to select the tenant in which you want to register an application (OR) Search for and select Azure Active Directory.   
+    - Under Manage, select App registrations > New registration.
+    
+    ![AzureImage1](https://github.com/apisec-inc/documentation/assets/115025465/bf231800-dea6-4adf-87e2-16d8f0f642be)
+
+    - In the Register an application page that appears, enter your application's registration information.  
+        - In the Name section, enter a meaningful application name that will be displayed to users of the app.
+        - Under Supported account types, select an option.(Multitenant / Single Tenant)
+        - In the Redirect URI section, select Web in the combo-box and enter the redirect URI of your web application. This is the URI where your application wants to handle the authentication response after the user signs in. For now, enter the following redirect URI : https://cloud.apisec.ai/auth/redirect.
+          
+![AzureImage2](https://github.com/apisec-inc/documentation/assets/115025465/d130d53f-3d1a-4217-a5e2-c6c5aed33443)
+
+        - Select Register to create the application.
+        - In the app's registration screen, find and note the Application (client) ID and Directory (tenant) ID.
+![AzureImage3](https://github.com/apisec-inc/documentation/assets/115025465/50ec404d-1dd8-4c6f-b254-406d5de4c5bd)
+
+         - In the app's registration screen, click on the Certificates & secrets blade in the left to open the page to generate secrets. In the Client secrets section, click on New client secret :
+            - Type a key description.
+            - Select one of the available key durations.
+            - The generated key value will be displayed when you click the Add button. Copy the generated value for use in the steps later. This key value will not be displayed again, and is not retrievable by any other means, so make sure to note it from the Azure portal before navigating to any other screen.
+![AzureImage4](https://github.com/apisec-inc/documentation/assets/115025465/32fdd96a-383a-44f3-ad38-23571a473da1)
+
+    - Insert Application (client) ID , Directory (tenant) ID and key value in the APIsec portal and copy the generated Azure Home URL for further configuration of Azure AD application. 
+
+
+2.   Actions to Perform at APIsec:  
+    
+        - Login to APIsec with the organization Admin account at https://cloud.apisec.ai
+     ![AzureImage5](https://github.com/apisec-inc/documentation/assets/115025465/2b10a07c-ec89-41be-9b1f-3d9575d48091)
+
+        - Click on the Integrations Tile.
+  ![AzureImage6](https://github.com/apisec-inc/documentation/assets/115025465/f939572d-40d2-498e-a2b5-65c5de3a0a80)
+          
+        - Click on SSO Tile and Select SSO Type as AZURE from the Dropdown.
+    ![AzureImage7](https://github.com/apisec-inc/documentation/assets/115025465/57150f5c-f790-4125-bdcb-8aaee11cc278)
+
+        - On the SSO Settings tab, enter Secret Code(key value), Client-ID and Tenant Id  from the Application Created on Azure AD.
+        - Copy the Azure Home URL and redirect to https://portal.azure.com (Cont. step:1.8)
+            - App registrations >Select the Created App.
+            - Under Manage select Branding & properties
+            - Insert Home page URL (Azure Home URL) copied from APIsec & Save.
+  ![AzureImage8](https://github.com/apisec-inc/documentation/assets/115025465/cf3f8097-e13a-48ad-8999-65a519b57862)
+
+        - Click on the Authentication blade under Manage.
+        - Select Both the Tokens and Save.
+     ![AzureImage9](https://github.com/apisec-inc/documentation/assets/115025465/66f2a256-5e26-4ac8-a441-b98e048be4b6)
+
+
+        - Click on API Permissions blade under Manage.
+        - Add API / Permissions (name = User.Read), if not added.
+        - Grant admin consent to the API / Permissions.
+            - Note : Can only be done by Global Admin.
+      ![AzureImage10](https://github.com/apisec-inc/documentation/assets/115025465/b4473990-28b3-4df5-b66c-b26a5404a23c)
+
+        - Add app roles. Currently, we offer support for the following roles. Please note that these are 'case sensitive'. Create the following roles in your system:
+            - ADMIN
+            - PROJECT_MANAGER
+            - USER
+
+     ![AzureImage11](https://github.com/apisec-inc/documentation/assets/115025465/e167bc36-f149-4711-81c3-2080863a1cf9)
+
+     ![AzureImage12](https://github.com/apisec-inc/documentation/assets/115025465/5ca88485-9393-4f2f-88a1-f25370e7f6d0)
+
+     ![AzureImage13](https://github.com/apisec-inc/documentation/assets/115025465/adb56334-30ef-4c6f-a91f-963ffd444ef9)
+
+
+        - Owners can be added at the Owners section below App roles, if required.
+
+     ![AzureImage14](https://github.com/apisec-inc/documentation/assets/115025465/6ab939b3-d272-46ab-b99a-aee84aee6adf)
+
+   ![AzureImage15](https://github.com/apisec-inc/documentation/assets/115025465/685c0939-f63f-4d24-bf19-4afe14b318a5)
+
+        - Redirect to Azure Active Directory Home page >  Manage > Enterprise Applications. 
+        - Search and Select the created application.
+          
+![AzureImage16](https://github.com/apisec-inc/documentation/assets/115025465/c13a3d86-7eb4-44e5-b588-3ae1a21c5a0c)
+
+        - Under Manage select Properties blade.
+        - Click “Yes” for ‘Assignment required?’ And ‘Visible to users?’ and Save .
+
+  ![AzureImage17](https://github.com/apisec-inc/documentation/assets/115025465/c90d7a16-fae7-4397-b3fa-8da327a869e4)
+
+        - Under Manage Select ‘Users and groups’ .
+        - Click on "Add Users/Groups" to assign them to the application, then select the desired role you wish to provide. If you do not add a role, then the user will not be able to login to APIsec.
+        - IMPORTANT NOTE: At this time, we only support adding USERS to the application and not adding GROUPS to the application.
+
+![AzureImage18](https://github.com/apisec-inc/documentation/assets/115025465/eb280844-7239-4991-842c-26f81f2f1822)
+
+![AzureImage19](https://github.com/apisec-inc/documentation/assets/115025465/16a81fe8-a2d1-44f0-ac04-1841daf08ee8)
+
+![AzureImage20](https://github.com/apisec-inc/documentation/assets/115025465/9e06525a-ae7a-4419-88a6-c4340c53b0e9)
+
+
+        -  Go To https://myapplications.microsoft.com/
+        - Click on the created Application and you should be redirected to APIsec portal.
+
+  ![AzureImage21](https://github.com/apisec-inc/documentation/assets/115025465/fe9b64a7-ae3e-49f8-aace-3b7fd30c5a0c)
+
+
+Note: AD Groups not supported
+
+Tutorial
+
+For a comprehensive visual guide on configuring Azure AD with APIsec, we have prepared a helpful Video tutorial. In this video (https://drive.google.com/file/d/18VKwmlfshCMMsNJovpIgZ9AdnMDth5Lh/view?usp=drive_link), you'll learn step-by-step instructions on setting up the integration between Azure AD and APIsec
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Steps to Configure AZURE using OAuth2.0 - PKCE with Confidential Client
+
+1.  Register an Application in the Azure AD Portal:
+    - Log into the Azure Portal.
+    - Navigate to Azure Active Directory, App registrations, New registration.
+    - Enter the following details to create an application:
+    - Name: ApplicationName
+    - Account types: Please select single/multi-tenant account types.
+    - Redirect URI: Select the platform as web from the dropdown.
+    - Click Register.
+    
+        ![Azure sso Registr](https://github.com/user-attachments/assets/ab356e4b-2339-445e-8b06-1dcc7f99cf9b)
+
+
+2. Configure Application for PKCE  with Confidential Client
+      - After an application is registered, please note the Application’s Client Id and Directory (Tenant Id).
+      - Click the “Redirect URIs” link to navigate to the platform configurations page.
+
+        ![CopyRedirectURI](https://github.com/user-attachments/assets/f761fb82-b0db-4220-900f-986bcf741fed)
+
+      - Click Add a platform and select Web under the Web applications.
+
+        ![Configure platform](https://github.com/user-attachments/assets/cddb02d0-90f2-4705-b981-efc29fe8907b)
+
+      - Enter the redirect URI of the application: https://{environment}.apisec.ai/auth2.0/{clientId}/redirect.
+        - Here’s an example: https://cloud.apisec.ai/auth2.0/000008ee-c71d-4a6a-a53c-33f7eb1000000/redirect
+
+      - Click Configure and Save the platform configurations.
+
+3. Enter the Homepage URL
+      - Click Branding and properties under Manage.
+      - Enter the Homepage URL, same as the redirect URI.
+      - Click Save.
+
+        ![Branding and properties HomePageURL](https://github.com/user-attachments/assets/8e182daa-605c-49ad-ac12-57fdcc8abd13)
+
+4. Generate a Client Secret
+      - Under the manage section: 
+        - Click certificates and secrets.
+        - Click a new client secret.
+        - Enter description and expiry.
+        - Click Add.
+        - Copy the Client Secret value.
+      
+5. Create and Assign App Roles
+      - Click App roles under the manage section.
+      - Enter a display name such as “Admin”.
+      - Select “Users/Groups” under Allowed member types.
+      - Enter Value, Description.
+      - Check the box “Do you want to enable this role?”.
+      - Click Apply.
+    
+Step 6: Assign user/ groups with the Enterprise application
+
+   - 6.1 Navigate to the Enterprise Application from the home page.
+
+      ![Default directory enterprise app](https://github.com/user-attachments/assets/dfcadfc0-ae03-4323-a8b0-bcb22451026d)
+
+       - Search and select the application registered in Step: 1
+
+      ![All applications](https://github.com/user-attachments/assets/824c2acc-a1e1-44be-9e7f-728984de84da)
+
+       - Click “Assign users and groups” link on the Overview page.
+
+      ![Assign users and groups](https://github.com/user-attachments/assets/0f3e823f-1c7a-4e94-a429-9ee39578db50)
+
+       - Click Add user group.
+
+      ![Add assignment](https://github.com/user-attachments/assets/0fdb7427-aee9-4f51-b063-41aea8da2dd2)
+
+       - Select the users.
+
+      ![userslist](https://github.com/user-attachments/assets/d4925c87-5703-4842-bb57-04ea7f479c6d)
+
+       - Select Roles & click on Assign.
+
+      ![selectrole and assign](https://github.com/user-attachments/assets/2c43efad-1641-463a-ac21-41e5f7ff8852)
+
+   Note: Users associated with a role will be used to assign the same role in APIsec.
+
+    - 6.2 Creating & assigning groups with the application
+         - Go to the home overview page.
+         - Under manage click Groups.
+     
+![OverviewUsersandgroups](https://github.com/user-attachments/assets/62b63b0e-77f7-4ecd-88d3-c78cc38c4552)
+
+         - Click New group & fill the details.
+               - Select Group type as “Security”.
+               - Enter Group name.
+               - Enter Membership type as “Assigned”.
+
+![newgroupform](https://github.com/user-attachments/assets/44db6796-d645-41ee-912b-5b4d2b5a13f5)
+
+                   - In members under users list select the users & click select.
+
+![userslistundermembers](https://github.com/user-attachments/assets/2eadd037-cd37-4cd5-9875-01fc84330aab)
+
+                   - Click create to successfully add members to that specific group.         
+
+Step 7: Assign permissions for the group's resource
+
+Note: AD Groups support require the following configurations
+    
+    - 7.1 To assign Delegated permissions
+         - Go to Application registrations page & select the registered app.
+     
+![appregistrations7 1new](https://github.com/user-attachments/assets/bca55601-7366-4132-9331-d53e282e1846)
+
+         - Under manage click API Permissions.
+         - Click Add a permission.
+         - Under Microsoft APIs click Microsoft Graph.
+
+![APIpermission 7 1 2](https://github.com/user-attachments/assets/b7e3e9b7-7ae9-49c6-bbd4-0fcae8482b8b)
+
+         - Click Delegated permissions & search for Group under Select permissions search field.
+         - Expand group & check the boxes.
+         - Click on Add permissions.
+   
+![RequestAPIpermissions7 1 3](https://github.com/user-attachments/assets/ebe3736c-b11d-4a4a-b181-afc72b9307ec)
+
+    - 7.2 To assign GroupMember.Read.All permissions instead of Group.Read.All
+         - Go to Application registrations page & select the registered app.
+     
+![appregistrations7 1new](https://github.com/user-attachments/assets/bca55601-7366-4132-9331-d53e282e1846)
+
+         - Under manage click API Permissions.
+         - Click Add a permission.
+         - Under Microsoft APIs click Microsoft Graph.
+
+![APIpermission 7 1 2](https://github.com/user-attachments/assets/b7e3e9b7-7ae9-49c6-bbd4-0fcae8482b8b)
+
+         - Click Delegated permissions & search for GroupMember under Select permissions search field.
+         - Expand GroupMember & check the GroupMember.Read.All box.
+         - Click on Add permissions.
+
+![image](https://github.com/user-attachments/assets/917d6172-84d7-467e-a4be-95c0e5d7356f)
+
+
+   - 7.3 To Assign Application permissions
+         - Follow the same steps as mentioned in 7.1
+           ![cc7 2](https://github.com/user-attachments/assets/58a89511-08d7-4819-a847-8e2d90174fed)
+
+
+     Note: Under Microsoft Graph click Application permissions.
+
+Step 8: Assign Groups with the Enterprise application
+        - Navigate to the Enterprise Application from the home page.
+        - Search and select the application registered in Step: 1.
+        - Click “Assign users and groups” link on the Overview page.
+        - Click Add user group.
+        - Select Group & click on Assign.
+   ![selectgropuandassign8 1new](https://github.com/user-attachments/assets/2764970d-9c3b-483a-bb99-311983328a40)
+    
+    - Select Roles & click on Assign.
+
+   ![selectroleandassign8 3](https://github.com/user-attachments/assets/bee422a4-09fd-48b6-8a54-8d33e07f67c3)
+
+Step 9: Publish Application
+       - Click properties under manage section.
+       - Click the toggle to enable “Visible to users”.
+       - Click Apply changes.
+    ![properties9 1new](https://github.com/user-attachments/assets/403855f8-3793-4846-a5d8-bd4da964b4cf).
+
+Step 10: Configure SSO in APIsec
+        - Login to APIsec application.
+        - Click on configuration from APIsec dashboard.
+        - Click on SSO and select sso type as Azure from dropdown.
+        - Enter the secret code copied from step 4.
+        - Enter the client Id and tenant Id copied from step 2.
+        - Click the toggle to active.
+        - Click Save.
+
+Step 11: Confirm login with SSO using OAuth2.0 - PKCE with Confidential Client
+          - Launch the URL https://myapps.microsoft.com/  and select the registered application which redirects the user to APIsec application dashboard.
+          - Alternatively, the users may use the redirect link for the SP-initiated flow.
+
+![APIsecdashboard11](https://github.com/user-attachments/assets/d99b7ac1-7e1a-4cc4-a243-ea70b05d4541)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Steps to configure Azure AD SSO using SPA with Public Client
+
+ Step 1: Register an Application in the Azure AD Portal
+1. Log into the Azure Portal.
+2. Navigate to Azure Active Directory > App registrations > New registration.
+3. Enter the following details to create an application:
+   - Name: `<Application name>`
+   - Account types: Select single/multi-tenant account types.
+   - Redirect URI: Select the platform as SPA from the dropdown.
+4. Click Register.
+   
+   ![Azure sso Registr](https://github.com/user-attachments/assets/b78dda57-7240-4310-b25e-604e5e5eece7)
+
+
+ Step 2: Configure Application for PKCE with SPA
+1. After the application is registered, note the Application’s Client Id and Directory (Tenant Id).
+2. Click the Redirect URIs link to navigate to the platform configurations page.
+3. Click Add a platform and select Single-page-application under the Web applications.
+4. Enter the redirect URI of the application. Example:
+   - `https://developer.apisec.ai/azureSPA.html`
+5. Click Configure and save the platform configurations.
+   
+   ![CopyRedirectURI](https://github.com/user-attachments/assets/6ba2f08b-07ec-41db-882c-567236578caa)
+   ![spa2 2configure](https://github.com/user-attachments/assets/74fb47b3-7f92-472e-b2ba-5d83497b03f3)
+   ![configurespa2 3](https://github.com/user-attachments/assets/b2fd5517-f9d7-402e-a25d-b1f8504c6aa9)
+
+
+ Step 3: Enter the Homepage URL
+1. Click Branding and properties under the Manage section.
+2. Enter the Homepage URL:
+   - `https://{environment}.apisec.ai/?cid=client_id&tid=tenant_id`
+   - Example: `https://developer.apisec.ai/?cid=ff81da46-e7af-4fd0-8777-000000000000&tid=00000000-708d-4303-8cdc-385dce520000`
+3. Click Save.
+   
+   ![spahomepareuri3](https://github.com/user-attachments/assets/9a917c01-da8e-4ca0-b4d0-555107a387a6)
+
+
+ Step 4: Generate a Client Secret (Optional for SPA)
+1. Under the Manage section, click Certificates & secrets.
+2. Click New client secret.
+3. Enter description and expiry.
+4. Click Add.
+5. Copy the Client Secret value.
+6. Note: Generating client secret code is optional for SPA  
+
+ Step 5: Create and Assign App Roles
+1. Click App roles under the Manage section.
+2. Enter a display name such as “Admin”.
+3. Select Users/Groups under Allowed member types.
+4. Enter Value and Description.
+5. Check the box Do you want to enable this role?.
+6. Click Apply.
+
+ Step 6: Assign Users/Groups with the Enterprise Application
+1. Navigate to the Enterprise Application from the home page.
+2. Search and select the application registered in Step 1.
+3. Click Assign users and groups link on the Overview page.
+4. Click Add user/group.
+5. Select the users.
+6. Select Roles & click Assign.
+
+   ![Default directory enterprise app](https://github.com/user-attachments/assets/e4607a85-ea24-470a-a16e-c93e5223c867)
+
+   ![allapplicationsspa6 2](https://github.com/user-attachments/assets/a99253eb-a72c-4140-8347-9c9933e8e135)
+
+   ![spaoverview6 3](https://github.com/user-attachments/assets/e7fcfcee-b89c-49e0-a76d-6134a356bcca)
+
+   ![addassignment6 4](https://github.com/user-attachments/assets/d08289e4-dab1-4eb5-a4a3-6d9feba356b6)
+
+   ![userslist6 5](https://github.com/user-attachments/assets/b642d968-6d00-43ab-ba1b-4e379157f104)
+
+   ![spaaddrole6 6](https://github.com/user-attachments/assets/6d6f57cc-2921-4c3e-83d0-8a0821372b64)
+
+   ![spashowusers6 7](https://github.com/user-attachments/assets/9055d397-07e3-4451-8ae0-4852c27a7189)
+
+
+ Step 6.2: Create & Assign Groups with the Application
+1. Go to the Home Overview page.
+2. Under Manage, click Groups.
+3. Click New group & fill in the details:
+   - Select Group type as Security.
+   - Enter Group name.
+   - Enter Membership type as Assigned.
+4. In Members under the Users list, select the users & click Select.
+5. Click Create to successfully add members to that specific group.
+
+   ![spaoverviewmanage6 8](https://github.com/user-attachments/assets/f020ed8a-e872-4c68-ae14-272adff76a23)
+
+   ![spanewgroupform6 9](https://github.com/user-attachments/assets/12a0cacc-f363-4b89-b7ee-38d95ac446f4)
+
+   ![spanewgroupuserslist6 10](https://github.com/user-attachments/assets/128e209a-9d82-49c9-9537-7739e5a3c805)
+
+ Step 7: Assign Permissions for the Group's Resource
+Note: AD Groups support require the following configurations.
+
+ Step 7.1: Assign Delegated Permissions
+1. Go to Application registrations page & select the registered app.
+2. Under Manage, click API Permissions.
+3. Click Add a permission.
+4. Under Microsoft APIs, click Microsoft Graph.
+5. Click Delegated permissions & search for Group under the Select permissions search field.
+6. Expand Group & check the boxes.
+7. Click Add permissions.
+
+   ![spa7 1appregis](https://github.com/user-attachments/assets/7cf05a66-2e20-41f3-aa59-ed74bf2e7202)
+
+   ![spaapipermissions7 2](https://github.com/user-attachments/assets/76926a86-161b-4f7c-b3eb-349d4a41cfbb)
+
+   ![sparequestapipermissions7 3](https://github.com/user-attachments/assets/a8e7b214-be8a-4f93-81de-c4179c43b571)
+
+ Step 7.2: Assign Application Permissions
+1. Follow the same steps as mentioned in Step 7.1.
+2. Note: Under Microsoft Graph, click Application permissions.
+
+   ![spareuestapiapppermissions7 4](https://github.com/user-attachments/assets/413b21b8-08ea-4358-b16c-85be7ac81acb)
+
+
+ Step 7.3: Assign Groups with the Enterprise Application
+1. Navigate to the Enterprise Application from the home page.
+2. Search and select the application registered in Step 1.
+3. Click Assign users and groups link on the Overview page.
+4. Click Add user group.
+5. Select Group & click Assign.
+
+   ![addassignment8 1](https://github.com/user-attachments/assets/74843fff-b30b-4d86-a6c9-0d9b5a44f165)
+
+   ![spaselectrole8 2](https://github.com/user-attachments/assets/2f90c4be-c34b-4a30-82f4-83d2f372e03c)
+
+   
+ Step 8: Publish Application
+1. Click Properties under the Manage section.
+2. Click the toggle to enable Visible to users?.
+3. Click Apply changes.
+
+   ![spaprop9 1new](https://github.com/user-attachments/assets/8eb1367c-8c27-4bf9-9af8-1f000fc4d2b9)
+
+
+ Step 9: Configure SSO in APIsec
+1. Login to the APIsec application.
+2. Click on Configuration from the APIsec dashboard.
+3. Click on SSO and select SSO type as Azure from the dropdown.
+4. Enter the secret code copied from Step 4.
+5. Enter the Client Id and Tenant Id copied from Step 2.
+6. Click the toggle to Activate.
+7. Click Save.
+
+   ![spa10](https://github.com/user-attachments/assets/7610705c-f409-46cf-99cc-8d8a8ff22bde)
+
+
+ Step 10: Confirm Login with SSO using OAuth2.0 - PKCE with Confidential Client
+1. Launch the URL `https://myapps.microsoft.com/` and select the registered application which redirects the user to the APIsec application dashboard.
+2. Alternatively, the users may use the redirect link for the SP-initiated flow.
+
+   ![APIsecdashboard11](https://github.com/user-attachments/assets/68573970-9e2e-4291-be0c-345f65b7409d)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ How to Configure JumpCloud SSO for APIsec
+
+ Configuration Steps
+
+1.  Actions to Perform to setup JumpCloud :  
+    - Log in to your JumpCloud admin account. (https://console.jumpcloud.com/login/admin).  
+    - Launch an existing organization or create a new one and launch it.   
+    - Go to SSO Applications and add a new application.
+    
+    ![JumpcloudImage1](https://github.com/apisec-inc/documentation/assets/87167426/46690455-84da-4137-b839-3fb2be74f0e6)
+
+    - Select "Custom Application" & click Next.
+    - Under "Manage Single Sign-On (SSO)," Select "Configure SSO with OIDC" and click Next.
+      
+    ![JumpcloudImage2](https://github.com/apisec-inc/documentation/assets/87167426/ae24495a-bd34-4b54-b036-361d252d2369)
+
+    - Add a "Display Label" for the application and click Next.
+      
+    ![JumpcloudImage3](https://github.com/apisec-inc/documentation/assets/87167426/4463695c-45a8-4301-bd2c-ccc7bd84629c)
+
+    - Verify the application summary and click on "Configure Application".
+          
+    - Under "SSO" select "Refresh token" and under "Client Authentication Type" select "Client Secret Basic".
+    - For "Redirect URIs" and "Login URL" provide as "https://cloud.apisec.ai/auth/{{clientId}}/redirect".
+       Note: You can obtain the clientId after clicking on the "Activate" button.
+    - Select "Email & profile" under "Standard Scopes".
+
+    ![JumpcloudImage4](https://github.com/apisec-inc/documentation/assets/87167426/5d3f8970-3e50-4890-ae65-a4ed289257a9)
+
+    - Select "include group attribute" and add "ROLE" as memberOf in the field.
+  
+    ![JumpcloudImage11](https://github.com/apisec-inc/documentation/assets/87167426/6ae8992c-afb7-4b7e-81f0-4499520d14fa)
+
+    - Under "User Groups" assign the application to any group from the list.
+
+      Note :
+       1. If no "User Groups" exist, you can create them in the "USER MANAGEMENT" section, ensuring that they align with the APIsec user roles.
+       2. User groups serve as a link between users and applications, enabling access.
+       3. Each user should be restricted to a single user group.
+
+    - Click on "Save" and store the "Client ID" and "Client Secret" locally. These will be prompted in a window after clicking on the "Save" button.
+
+    ![JumpcloudImage5](https://github.com/apisec-inc/documentation/assets/87167426/a64b87e2-e115-407d-835e-c9fbe421c0d3)
+
+    - Place the stored "clientId" in "Redirect URIs" and "Login URL" under "SSO" by clicking on the created application and save it.
+    - Under "User Management" you can add users and user groups.
+       Note: Users can access the applications with the same user group assigned to the user.
+      
+    ![JumpcloudImage6](https://github.com/apisec-inc/documentation/assets/87167426/c5bd0239-875c-4c49-b122-6a364f776b1e)
+
+
+1.   Actions to Perform at APIsec:  
+    
+      - Login to APIsec with the organization Admin account at https://cloud.apisec.ai
+     
+      ![JumpcloudImage7](https://github.com/apisec-inc/documentation/assets/87167426/122a817c-fb90-4567-adfe-c29801ded80d)
+
+      - Click on the Configurations Tile.
+
+      ![JumpcloudImage8](https://github.com/apisec-inc/documentation/assets/87167426/cc7b935a-9edc-4919-b0a1-b658d1433475)
+          
+      - Click on SSO Tile Under Integrations and Select SSO Type as JUMPCLOUD from the Dropdown.
+      
+      ![JumpcloudImage9](https://github.com/apisec-inc/documentation/assets/87167426/58e8e031-6313-4c6e-b1b0-b4caddaae2e4)
+
+      - On the SSO Settings tab, enter the "Client-ID" and "Secret" from the application created on JumpCloud and save by activating the form.
+      
+      - Go to the User Portal Login page at https://console.jumpcloud.com/login
+      - Enter the user credentials and log in.
+      - Click on the created application, and you should be redirected to the APIsec portal.
+      ![JumpcloudImage10](https://github.com/apisec-inc/documentation/assets/87167426/7fb3f2b8-bd06-45b6-9005-12a40c90ea35)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Reports
+
+The 'Reports' page of APIsec covers the trends, summary, and coverage. This section of the Project Dashboard contains brief stats of the current Project. It also has graphical representations of Project Stats. 
+
+ 6.1. Trends
+The 'Email Report' button at the top right corner of the 'Trends' page allows you to receive PDF of Pentest, Developer, and compliance Report in the mail box. The reports are sent to the registered email address. 
+
+The "API Composition" Pie chart's each slice represents the API methods along with the total number of requests. 
+
+The "Endpoints Trend" graph shows the trend of API Endpoints. The trend changes on the basis of an increase/decrease in the number of Endpoints. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322487-6b390603-2522-4383-8bc4-2afd0a05530b.png" />
+
+The "Coverage Breakdown" and "Playbooks Trend" are explained in <a href="https://docs.apisec.ai/ProjectDashboard/424-play-with-playbooks">Chapter 4.2.4</a>.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322496-2e79aabb-8dca-4b4c-8c40-72e1e02e8c48.png" />
+
+The "Open Vulnerabilities" Pie chart shows the detected vulnerabilities which are not fixed yet. It divides them on the basis of 'Security Categories'.
+
+The "Vulnerability Trend" graph shows the increase/decrease in the detected vulnerabilities in all the Scans performed. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322506-5afc79db-32a0-4348-a160-a80b729293ab.png" />
+
+This section of the 'Trends' page contains a list of 'Security Categories' along with their OWASP ranking. It shows the 'Security Categories' assessed in the API Scan and the vulnerabilities found. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322517-799b2861-2558-4b61-a409-d709cb7db53b.png" />
+
+At the end of the list, it shows the total number of Playbooks and total open vulnerabilities. The important option here is the 'Download as Excel' button. 
+
+Below is the view of the Excel file. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322530-802bbf73-8014-4b6c-a3ac-aa89e483a016.png" />
+
+
+ 6.2. Summary
+The 'Summary' Page contains the briefs of Project API Scan where you can download the PDF of the summary. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322538-4d8e395a-fabc-48d7-8e63-11fa1e7cd1c3.png" />
+
+ 6.3. Coverage
+The 'Coverage' has a list view of coverage breakdown. The 'Security Categories' mapped against the API resources and Endpoints are presented. 
+
+The 'Y' green box shows that the particular category was mapped against the API. The 'N' red box is the opposite. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322542-159c350b-b8a8-4650-bb9a-584e4ac64830.png" />
+
+If you need to re-test the category for a particular resource, then `click` on the green box. 
+Select the environment -> Select Scanner -> `click` Scan 
+
+**the categories with 'N' status cannot be re-assessed. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322552-b41cf272-f961-4386-9288-ad15aa20fa67.png" />
+
+The important feature on this page is the 'Download as Excel' button at the bottom right corner of the page. 
+
+Below is an example of the Excel file. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322557-1ba15faa-4fe4-449b-a5d7-9b5531c07546.png" />
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Deploy Scanners
+
+APIsec allows you to deploy a Private or Global Scanner. Go to the Scanner module by `click` 'Scanners' on the home page. 
+
+<img alt="Deploy Scanner" src="https://user-images.githubusercontent.com/75529175/166118486-438d314c-d5e7-4221-a0fc-528387791cee.png" />
+
+ 7.1. Private Scanner
+You can deploy Private Scanners across AWS, Azure, GCP, Kubernetes, and On-premises. The APIsec scanner is a light-weight Docker container. You can deploy the On-prem Scanner as a docker container on any Linux host or deploy across the above mentioned cloud regions. 
+
+ 7.1.1. Deploy a New Private Scanner on Cloud
+1. `click` '+ New Scanner' on the Scanners module page.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118496-56bedf77-f288-4686-856d-71b530fa149c.png" />
+
+2. Enter Scanner name that you would like to associate to the scanner. It is recommended to give unique names to the Scanners to easily identify them  while deploying a registered Private Scanner. 
+    
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118505-d0897564-08e8-4e78-a108-195d4c6110d1.png" /> 
+
+3. You need to register the cloud service, which you will use for hosting the Scanner. 
+   To register a cloud service;
+
+
+a . `click` '+ Register Cloud' -> Enter the name -> Select the cloud type. (For this demo, 'Azure' is selected ) 
+      
+b. Provide the required cloud credentials. For 'Azure' the credentials shown in the screenshot are required.
+
+Note: Credentials requirements vary with the selected cloud type. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118506-a21ceff5-32d0-49ac-8ace-c8727b705798.png" />
+
+	 
+c.`click` 'Advanced section' below and select the available region. 
+
+Note: credentials requirements varies with the selected cloud type.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118509-18494304-3ef2-4cd2-86d7-6fa8fb9f2630.png" /> 
+
+d. `click` 'Add' and the registered cloud service will appear on the current page.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118513-45f082b0-97e8-4b30-bf78-d03ec932c47d.png" />
+
+ e. `click` 'Submit' to deploy the private scanner on the cloud.
+	      
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118517-aaa9ee4f-b4b3-4c0c-9614-0bca7d3d60ea.png"/>
+	    
+  7.1.2. Deploying a New Private Scanner On-premisses
+To deploy an On-prem private scanner, you need to set up the Docker/Kubernetes on the host machine. 
+
+1.  Follow the step 1 and 2 of the chapter 7.1.1.
+2. `click` 'Docker/Kubernetes Installer' and select the cluster size. (The larger cluster sizes are higher speed) 
+   
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118529-c0439dbf-586c-4099-abed-644e5bb8cf9c.png"/> 
+
+3. `click` 'Submit' and a screen with commands for deploying the Scanner on Kubernetes, Docker, and AWS Fargate will appear. 
+   
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/100760767/220836827-370cd9fc-5e19-4768-8d7a-924ceec76518.png"/>
+
+4. Click 'Ok' to proceed. 
+
+5. Enter the IP address of the Scanner. This IP is for the machine on which private scanner is deployed. 
+
+6. The commands for setting up the Scanners on Docker, Kubernetes, and AWS Fargate are provided on the same page. You can use the commands for the host system environment. 
+
+7. `click` 'Check Status' at the end of page to check the status of Scanner. This status tells us if the scanner is deployed successfully and running. 
+
+8. `click` 'Save' to deploy the On-prem private scanner. 
+
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118536-5b297263-1a3f-437e-a1ef-366d781d167f.png"/>
+
+ 7.2. Global Scanners
+APIsec also allows you to select a ready to use Global Scanner. These scanners are deployed on the Virtual Machines of APIsec Inc. They are provided for the ease of users who do not want to set up a separate private scanner.  
+
+You can select any desired Global Scanner while initiating a Scan.
+
+A total of 9 Global Scanners are currently available. 
+
+- Rate limit Scanners run slowly with intervals. 
+- Super Scanners are fast. 
+- The other scanners are deployed on the Cloud in different regions. 
+  
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166118529-c0439dbf-586c-4099-abed-644e5bb8cf9c.png"/>
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Vault
+
+You can securely store and use API keys and credentials, tokens, passwords, and key-value pairs. APIsec vault is just like a password manager that securely stores all your credentials for ease of access. 
+
+![image](https://user-images.githubusercontent.com/115025465/213296236-afaf708e-ee20-47ff-a952-467e0228fb05.png)
+
+
+In the below screenshot, you can see all the stored credentials. When you integrate an account with your APIsec account the credentials are automatically stored in the vault. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119692-643b3dc7-b821-4eb5-8b34-fd9474db4751.png"/>
+
+APIsec also allows you to add new credentials in the vault for later use. 
+
+To add new credentials:
+
+1. `click` '+ New Credentials'.
+   
+2.  Provide the name you would like to associate with the credentials. It is recommended to provide unique names for the ease of identification. 
+   
+3. Select the account type against those credentials. 
+   There are number of account types available for API Gateways, Version Control, 
+   Notifications, Scanner Deployment, Issue Trackers, Report Storage, and Notifications.
+   
+   Github was selected for this example Version Control. This account type only requires name and personal access token (PAT). 
+   You can read the GitHub official documentation by clicking 'learn more' for generating the PAT. 
+   
+ Note: The credentials requirement varies according to the account type. Also, it is advised to provide the mandatory and optional account credentials for smooth integration. 
+
+ <img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119695-fee13ad6-ae56-45e3-b348-8c13884f3166.png"/>
+
+ 4. `click` 'Create' and the credentials will be successfully added in the vault. 
+   
+   <img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119696-ff83c70a-c45a-44df-942e-7fb733e814d4.png"/>
+
+ How does APIsec keep items in your vault secure?
+
+ APIsec stores the vault data in a postgreSQL database encrypted using PGP with a symmetric key.
+
+ APISec passes a secret key (called as session key) DB to encrypt and decrypt. The Key and its size can't be revealed.
+
+For more details on how the PGP Encrption works refer Section "F.28.3. PGP Encryption Functions" at https://www.postgresql.org/docs/current/pgcrypto.html
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ APIsec Security Categories 
+
+ What is a Security Category?
+
+A Security Category is a set of security tests that will be used to intelligently create tests applied to endpoints. Each security category is a test generator to find security issues.
+
+
+ What is a Security Category Tier?
+
+A Security Category is a set of security tests that will be used to intelligently create tests applied to endpoints. Each security category is a test generator to find security issues.
+
+
+ Security Category Tiers
+
+![image](https://github.com/apisec-inc/documentation/assets/115025465/e623626c-45ea-4de6-8480-063e7f2f6302)
+
+ Tier 0
+
+ 'The beginning'  All you have is a URL. There is no specification or a minimal specification for the API. Nothing else is configured.
+ What is tested: Server level configurations can be tested at this tier.  
+ Examples: SSL certificates, Headers
+
+
+ Tier 1
+
+ This tier has a good specification (_file/url)_ to work with. The endpoints and parameters are defined that allow more complex tests to intelligently target the API.
+ What is tested: Endpoint testing without authentication. Parameters without authentication can be tested and any endpoints that should require authentication but do not, can also be discovered.
+ Examples: Malicious payloads allowed in parameters without authentication.
+
+
+ Tier 2
+
+ Tier 2 requires authentication to be configured along with working users for that authentication.
+ What is tested: All endpoints are tested with the users configured to see what security issues can be found behind authenticated access.
+ Examples: Insecure authentication practices
+
+
+ Tier 3
+
+ This tier requires configuring more complex scenarios pre-defined in APISec. It may include things like defining roles or acceptable payloads.
+ What is Tested: Tests with multiple steps to look for access and logic issues that can’t be determined with a single api endpoint call or basic configuration.
+ Examples: RBAC
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Security Categories Use
+
+
+APIsec allows you to use a public or private security category(s) while running a Scan.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119715-6dc082bd-ea19-4d20-9700-8e2b883fa44b.png" />
+
+ 9.1. Public Security Categories
+APIsec has 123 total up-to-date public security categories. These security categories include OWASP Top 10 along with other known API vulnerabilities. 
+
+The security categories are constantly updated. Existing ones include:
+
+- Unsecured Endpoints 
+- Authentication Weakness
+- Role-Based Access Controls (RBAC)
+- Attribute-Based Access Controls (ABAC)
+- SQL Injection
+- Distributed Denial of Service 
+      
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119698-502254b7-519d-408c-bd34-e8a2666d6bd4.png" />
+
+ 9.2. Private Security Categories
+APIsec offers this unique feature to its enterprise customers to add custom security models for newly discovered vulnerability(s) of a database or a framework. 
+
+Note: Only the Enterprise admin can add or edit a security model. 
+
+To add a new security model:
+
+1. `click` 'New Security Model' and select the type of mode from the drop-down menu. 
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119699-40a61d6a-f0bf-4303-b114-22c6612082ef.png" />
+
+2. 'Injection' is selected for this demo.
+   
+   The basic section requires following information:
+   
+   - Name: Provide a unique name for the security model.
+   - Injection Data: This data is the payloads that will be injected on the target API while playbook execution (Security Scanning). 
+     
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119702-91656384-e946-4d3c-9a06-27b8169bffde.png" />
+   
+   The Advanced Section requires following information: 
+   
+   - Key: This is autofilled according to the name of the security model.
+   - Assertions: Provide the assertions for the security model. The rules and details are mentioned in the comment box next to 'Assertions'.
+   - Security Model Description: This is optional but it can be added to make it easy for others to understand the purpose of the model. It can be written in plain-text or HTML tags. 
+   - Assertions Description: This is also an optional requirement but it can be added to explicitly define the meaning of assertion expressions.
+   - Remediation: Admin can add the mitigation techniques for the vulnerability(s) covered under the security model. 
+   - Tags: The tags are for the classification of vulnerability(s). for e.g, OWASP Top2 can be a tag for the security model that covers OWASP top 2 vulnerability.
+   - Vulnerability Scoring System: The default is the CVSS 3.1 but you can also define a custom scoring scale. 
+   - Est. Time to Fix(hours): The time required for fixing the vulnerability(s).
+   - Est. Bounty Value: The bounty offered by different programs for such vulnerability(s).
+   - Auth: By default it is "Default". But, you can use the name declared in the environment variables. 
+   - Beta Toggle: If this security model is a beta version then turn on. 
+   - Skip Filing Vulnerability Toggle:  If off then it prevents from filing the vulnerability after the scan. If the vulnerability is detected it will not be filed (recorded) in the results. 
+   - Scope: The scope for a custom security model is private and it is visible to the enterprise user only.
+ 
+ <img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119704-061d4b3c-0234-4bbf-904e-c7b5b50120e1.png"/>
+
+3. `click` 'Build and Launch' to make it ready for use during the Scan.
+    
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119708-5d3ada1e-4701-418b-89df-082aba0b8a7c.png"/>
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Security Center Dashboard
+
+APIsec provides all customers with a Security Center Dashboard that summarizes information across all API applications into one view.  
+You can access the security center from the dashboard on the far right menu item.
+![SecurityCenter](https://github.com/apisec-inc/documentation/assets/115025465/cb291949-3f67-4139-9d6e-1824d8e2a1e2)
+
+ High Level Statistics
+At the top, the dashboard shows the following high level statistics:
+
+<img width="1222" alt="High Level Statistics" src="https://github.com/apisec-inc/documentation/assets/77065777/777b7ac4-83fc-4f5e-b211-8519a2bf9d3e">
+
+ Count of APIs Registered
+Aggregate sum of all registered applications.
+ Count of Endpoints
+Aggregate sum of all endpoints.
+ Count of Unique Endpoints
+Aggregate sum of all unique endpoints based on combination of methods and endpoints.
+ Count of Playbooks Generated
+Aggregate sum of all playbooks generated across all registered APIs.
+ Count of Playbooks Scanned
+Cumulative count of executed playbooks across all registered APIs.
+ Count of Open Vulnerabilities
+Current count of open vulnerabilities across all registered APIs.
+
+ Open Vulnerabilities Trend
+This dashboard enables customers to see a trend of open vulnerabilities over time, compared to the number of endpoints.
+
+<img width="586" alt="Open Vulnerabilities Trend" src="https://github.com/apisec-inc/documentation/assets/77065777/4905ad02-ae1a-45ea-8d9b-916be31befc8">
+
+ Open Vulnerabilities Severity Trend
+This dashboard breaks down vulnerabilities over time by severity. In the example below, Critical vulnerabilities increased in July of 2023, corresponding to ongoing onboarding efforts during that same period of time.
+
+<img width="585" alt="Open Vulnerabilities Severity Trend" src="https://github.com/apisec-inc/documentation/assets/77065777/4f2a0eae-9166-4782-ae3e-58b602b183f4">
+
+ Active Projects Open Vulnerabilities
+This dashboard breaks down vulnerabilities by severity as in the following example:
+
+<img width="584" alt="Active Projects Open Vulnerabilities" src="https://github.com/apisec-inc/documentation/assets/77065777/c8b69c64-ea2d-4240-9130-fec33c7f33a1">
+
+ Vulnerabilities Age Matrix
+This dashboard shows the vulnerabilities by duration. By default, all open vulnerabilities are shown, regardless of how long they remained open.
+
+<img width="581" alt="Vulnerabilities Age Matrix" src="https://github.com/apisec-inc/documentation/assets/77065777/bee3e7eb-4e99-4087-96dc-b08335df4ff9">
+
+Adjusting the slider at the bottom of the dashboard allows customers to limit the age of vulnerabilities. In the following example, the age of vulnerabilities shown is greater than 60 days.
+
+<img width="586" alt="Vulnerabilities Age Matrix Slider" src="https://github.com/apisec-inc/documentation/assets/77065777/311d92ff-09f1-4cc6-a2d6-bfc2506ed222">
+
+ OWASP Top 10 Vulnerabilities
+This dashboard shows vulnerabilities that are identified focused solely on the OWASP API Top 10 Categories. Example below:
+
+<img width="379" alt="OWASP Top 10 Vulnerabilities" src="https://github.com/apisec-inc/documentation/assets/77065777/8884d457-5f7f-4fed-91b7-f69db3329abd">
+
+ List of Unscanned APIs
+This dashboard allows customers to identify API projects and associated profiles that have not been scanned within the past 6 months. Scans can be initiated via a variety of mechanisms, but this list is populated with applications that have not been scanned by any mechanism, indicating a problem that needs further investigation. Hovering over the "(i)" provides additional information in the tooltip. A full report of impacted APIs is downloadable in CSV format. Example below:
+
+<img width="379" alt="List of Unscanned APIs" src="https://github.com/apisec-inc/documentation/assets/77065777/5bb2e140-998e-4fbd-a99f-98209112136a">
+
+ Monthly Activities Summary
+This dashboard highlights recent activities covering a two month period. Example below:
+
+<img width="380" alt="Monthly Activities Summary" src="https://github.com/apisec-inc/documentation/assets/77065777/0bad2d7d-96b6-451b-af70-857694a0874e">
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Spec Analysis
+
+Spec analysis is run when a API spec is uploaded or updated. It's looking for recommendations from a security perspective to either configure something or based on the details defined.
+
+
+ Recommendations to configure
+
+  Something left undefined in an API spec does not indicate a vulnerability in itself. Recommendations to improve the spec are because API testing, both functional and security are based on the spec. What is missing from the spec may not be getting tested sufficiently.
+  The spec is also the basis of security appliances such as Web Aplication (Layer 7) Firewalls. They filter traffic based on definitions of what should be allowed. The less that is defined the les that is understood and filtered.
+  
+  Example: No auth schemes are configured. Without any auth schemes configured it's diffocult for testing tools to understand the context of what requires auth and does not and at what level. This context is significant for generating relevent recommendations.
+  
+  Secuity issues based on API Spec
+  The spec file is analyzed for anything that can be determined by looking at the spec by itself, before scanning. This is from the perspective that the spec is correctly defined. Any recommendations on a spec that not defined correctly should prompt correcting the spec.
+  
+  Example: Sensitive data sent over GET method. Parameters sent in the URL aren't secure from interception. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Global Dashboard
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119719-fd0aee0a-28f0-4780-826e-51377ade318d.png"/>
+
+APIsec offers a Global Dashboard where you can view all the Project(s) stats that include:
+
+ - Scans of the Month
+ - Open Vulnerabilities
+ - Closed Vulnerabilities
+ - Registered APIs
+ - Endpoints
+ - Playbooks
+ - Available Licenses
+
+The Global Dashboard offers both the graphical and list view of Project stats. Below is the graphical view of the stats. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171663756-e68f42fc-9baa-42c8-9ee6-b5b106b8e2e4.png"/>
+
+
+At the bottom of the page is the list view of stats that lists all the Projects. It allows the user to export all the Project stats to an Excel file. This feature is helpful for keeping in-house API security testing record. 
+
+To export the data to an Excel, `click` 'Export to Excel' at the left bottom corner of the page. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171663769-acff4878-ba1d-4e60-a893-9465db54ede8.png"/>
+
+
+This is an example Excel file.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/166119726-11df76af-165f-4445-8203-6516856a2af8.png"/>
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ View Notifications
+
+The APIsec notifications appear under the bell icon besides the Profile Menu. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322569-3ca71bd5-1694-4417-a652-c892bb93cf78.png" />
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ Set up the Profile
+
+The User Profile configuration options can be found under the User Profile menu on the top right corner of the User Home page. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322759-e2b1e1cf-fefb-4093-8174-f04e21a45e35.png" />
+
+ 12.1. View the Activities
+It contains all the activities performed by this user profile. You can view the logs of the activities performed and apply Search filters to optimize the activities list.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322576-3437a6c5-d90e-47ff-8a98-9b3a47a9df8e.png" />
+
+To view the logs of the activity, `click` on file button under the logs column. 
+Here is the view of activity logs. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168327382-3063d023-f9e2-49d4-80c0-ac69aa342b43.png" />
+
+ 12.2. View Account Details
+You can view the account details by clicking on the 'Account' under the user profile menu. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322670-80793acc-5d82-44f2-bcc7-d3d402808e31.png" />
+
+ 12.2.1 Link SSO/Okta account
+You can link SSO/Okta account with the APIsec account. This option is available in the 'Account' under the User Profile menu. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322601-3c5a9deb-23b8-4dfa-af92-b4a878249ec2.png" />
+
+A guide on 'How to Configure OKTA SSO for APIsec?' is available which can be accessed by clicking on the question in blue. The link redirects you to a Google doc as shown in the below screenshot. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322647-fb5dbc74-9278-485f-a4c8-d6249dbd9635.png" />
+
+ 12.3 Add/Edit Users
+APIsec allows the enterprise to add multiple users and assign them different roles. This option is available in the 'Users' under user Profile menu. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322686-41970268-fa1f-447d-a097-7fb9a1b36e8e.png" />
+
+To add a new user, `click` '+ New User'.
+
+The user's name, email and role are required. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322699-95a74262-e20b-4fda-b99a-0115275d0dc5.png" />
+
+To add bulk new users, `click` on '+ New Users (Bulk)'.
+Please follow the given format for adding the user credentials. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322713-5ce8fff7-55b8-4570-b949-ce7bbfb16a71.png" />
+
+To add a guest user, `click` on '+ Add Guest User'.
+
+Only Email and Role are required for the guest user. APIsec sends the invite to the guest on the given mail. If the guest accepts the invite then the user is added. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322724-21799488-338b-485b-8c90-d1e7e2cc3146.png" />
+
+To edit the newly added users or already existing `click` on 'More' drop-down menu. The drop-down has Edit and Reset Password options. 
+
+ 12.4 Add/Edit Orgs
+Only Enterprise Admins can add, edit, and delete organizations in the APIsec database. 
+Enterprise Admins have the 'Orgs' option under the User Profile menu. This takes the user to the 'Orgs' page. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171651194-5c01d816-032e-4227-ae11-1100f6908418.png"/>
+
+
+At the 'Orgs' page, user can view and edit the existing organizations or add a new one. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171651250-b3bf064e-7d67-4e5f-8807-2e526fd25ba4.png"/>
+
+To add a new organization, `click` '+ New Org' and enter the required credentials. 
+The notable options here are the:
+
+- Enterprise Licenses: Enter the number of API registration licenses provided to the organization. 
+- Tag: Eag the organization for identification and segmentation purpose. 
+- Playbook monthly execution limit: Enter the monthly max limit for Playbook execution via Scans.
+
+`click` 'Create & Next' at the bottom left corner of the page to save the "Org Details" and proceed to "User Details" section. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171651264-e68d7bd6-d6bc-43a0-948d-27b8627f2227.png"/>
+
+Enter the "Name", "Email" and select the role of the user. The role access levels are mentioned explicitly as shown in the below screenshot.  
+
+If the user is already registered then `click` 'Skip' or else `click` 'Save & Complete'. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171651273-ad7fed69-8a64-4b0c-9a52-107a1b81f9c4.png"/>
+
+The below screenshot shows the users of the "Demo" organization. Here, an Enterprise Admin can 'Edit' the organization and user details. He can also invite a 'Guest User' or add 'New Users'.
+
+The details for the the 'New Users' are given in the chapter 12.3.
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171651284-cdc06348-a5c7-419f-92e6-e5bff9c36c47.png"/>
+
+
+ 12.5 View My Profile 
+You can view your user profile by visiting 'My Profile' under the user Profile menu. This section also provides the option to view organizatoin access and reset the password.  
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/168322735-1d0176cb-3d7b-45b8-aa7c-5ed0284f132b.png" />
+
+The 'Orgs Access' shows the registered organizations and the access level along with other details. All the registered organizations appear under this tab. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/169665719-109cf564-adaf-4b54-ab43-db2227b8a1d9.png" />
+
+
+ 12.6 Sign out the Account
+To sign out the account, `click` 'Sign Out' under the user Profile menu. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171663783-65644566-799c-4a36-82cd-91083ec351ac.png" />
+
+You can request a new password by clicking on 'Forgot Password'. It will prompt to enter the registered email. Once you enter the email, further instructions will be sent to that address. 
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/169666107-cd357cc5-dc55-4bfb-a8d4-83cf60c338a4.png" />
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Two Factor Authentication Setup
+
+
+Two factor authentication (2FA) allows you to increase the security of your APIsec account which allows the users to authenticate themselves with a two-step process.  This authentication layers makes it harder for the hackers to attack your account.
+
+ Steps
+
+For the 2FA, it's a 2 step process to activate it
+
+ Steps for the Admin
+- First, the admin needs to enable the 2FA from the Accounts under the name menu
+
+![Account](https://user-images.githubusercontent.com/105206963/220571253-09e08e65-a186-491c-ba6a-8f24d9345df6.png)
+
+![2FAadmin1](https://user-images.githubusercontent.com/105206963/220570278-943a7294-6784-405e-9154-e3373e929c66.png)
+
+- Then, an email will be sent out to the users
+
+ Steps for the Users
+- Now, the the user will have to enable it from the My Profile menu option 
+
+![my profile](https://user-images.githubusercontent.com/105206963/220571745-0e06852e-deaf-49a6-b845-dacc822e2019.png)
+
+![2FAuser](https://user-images.githubusercontent.com/105206963/220571858-6450b4e7-1bd6-474d-81aa-bb6e9d416f15.png)
+
+- A QR code will be shown > Scan it using the app on the phone and 
+
+![2FAQR](https://user-images.githubusercontent.com/105206963/220572117-598a8ae0-b1c8-4eec-a0c4-b22be6c69891.png)
+
+- Click Save
+- Note: Ensure that the setup is successful and the code is getting generated
+
+
+ Certified Applications on IOS
+- Twilio - Authy and
+- Microsoft Authenticator
+
+ Certified Applications on Android
+- Twilio - Authy
+- Microsoft Authenticator and
+- Google Authenticator
+
+
+ Troubleshooting 
+
+Check MFA Settings and Configuration:  
+Ensure that the MFA settings for the affected users are configured correctly and consistently with those of the users for whom MFA is working. Verify that the time settings on their devices are synchronized.
+
+MFA App Compatibility:  
+Different MFA apps might have slight variations in how they generate codes. Ensure that the users are using recommended and tested MFA apps. Authenticator apps like Google Authenticator, Authy, or Microsoft Authenticator are commonly used and usually reliable.
+
+Time Synchronization:  
+MFA codes are time-based. If the user's device has an incorrect time setting, the generated codes won't match the server's expectations. Ensure that the time zone and time settings are correct on the user's device.
+
+Account Lockouts:  
+APISec has account lockout policies that trigger after a certain number of failed MFA attempts. Check if the affected accounts are locked out due to repeated incorrect MFA attempts.
+
+Device-Specific Issues:  
+If the issue seems to be isolated to specific devices, it might be worth investigating if there are any device-specific settings or software conflicts causing the problem.
+
+Software Updates:  
+Ensure that both the MFA app and the device's operating system are up to date. Sometimes, updating these components can resolve compatibility issues.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Sign up Free Account
+
+You can sign up for a free account on APIsec. Free accounts always allow limited features. 
+
+You can get unrestricted access by purchasing the APIsec Standard, Professional or Enterprise license. More details can be found on the official website www.apisec.ai.
+
+To sign up a free account; `click` on 'Sign up now' located at the bottom of the APIsec Login form. 
+
+Enter the credentials and `click` 'Signup'. If everything is correct then a free account will be successfully registered. You will then be redirected to the login form. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171651330-4a4ba3ce-6f1e-47f9-a77e-816226140d41.png" />
+
+
+The free account does not have 'Security Categories' feature in the services menu, which restricts you from using 'Integrations' and 'Reports' for the project. Moreover, it is only limited to register 2 APIs. 
+
+<img alt="APIsec Screenshot" src="https://user-images.githubusercontent.com/75529175/171651338-5820f9d3-1a1c-4418-88f0-bbdd50974d23.png" />
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+Generating OpenAPI Specification (OAS) for your REST APIs 
+
+
+ The OpenAPI Specification (OAS) defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection.(https://www.openapis.org/)
+
+APISec supports 1.0, 2.0, 3.x versions of the OpenAPI specification (OAS) as well as Postman and RAML formats.
+
+The following is a list of some libraries and resources which can be helpful in generating an OpenAPI Specification (OAS) document for your existing REST API application grouped by implementation technology.
+    
+ ASP.NET Core  
+   - The two main OpenAPI implementations for .NET are Swashbuckle and NSwag. They are explained nicely in the Microsoft ASP.NET documentation - [ASP.NET Core web API documentation with Swagger / OpenAPI | Microsoft Docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-6.0)
+   - The OpenAPI.NET SDK contains a useful object model for OpenAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model - [GitHub - microsoft/OpenAPI.NET](https://github.com/microsoft/OpenAPI.NET)
+
+ Spring  
+   - Springfox supports automated JSON API documentation for API's built with Spring - [GitHub - springfox/springfox](https://github.com/springfox/springfox)
+   - The springdoc-openapi Java library helps automating the generation of API documentation using Spring Boot projects - [GitHub - springdoc/springdoc-openapi](https://github.com/springdoc/springdoc-openapi)
+   
+ Java
+   - For JAX-RS based projects(Jersey/RESTEasy/Mule),Swagger Core provides examples and server integrations for generating the Swagger API Specification, which enables easy access to your REST API - [GitHub - swagger-api/swagger-core](https://github.com/swagger-api/swagger-core)
+   - The Swagger Maven Plugin is a JAX-RS & SpringMVC supported maven build plugin, helps you generate Swagger JSON and API document in build phase -  [GitHub - kongchen/swagger-maven-plugin](https://github.com/kongchen/swagger-maven-plugin)
+
+ Python
+ - Flask-RESTX is an extension for [Flask](https://flask.palletsprojects.com/en/2.1.x/) which provides a coherent collection of decorators and tools to describe your API and expose its documentation properly using Swagger - [GitHub - python-restx/flask-restx](https://github.com/python-restx/flask-restx)
+ - Falcon-apispec is an apispec plugin that generates OpenAPI specification (aka Swagger) for Falcon web applications -  [Github - alysivji/falcon-apispec](https://github.com/alysivji/falcon-apispec)
+ - drf-yasg - Yet another Swagger generator helps in automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST Framework code. - [GitHub - axnsan12/drf-yasg](https://github.com/axnsan12/drf-yasg)
+ - drf-spectacular is a sane and flexible OpenAPI 3 schema generation for Django REST framework - [GitHub - tfranzel/drf-spectacular](https://github.com/tfranzel/drf-spectacular) 
+
+ Node.js
+ - swagger-autogen performs the automatic construction of the Swagger documentation - [swagger-autogen - npm](https://www.npmjs.com/package/swagger-autogen) 
+ - NestJS provides a dedicated module which allows generating OpenAPI (Swagger) - [Github - nestjs/swagger](https://github.com/nestjs/swagger)
+ - swagger-express is a simple and clean solution to integrate swagger with Express - [swagger-express - npm](https://www.npmjs.com/package/swagger-express)
+ - express-oas-generator automatically generates OpenAPI (Swagger) specification for existing ExpressJS 4.x REST API applications - [express-oas-generator - npm](https://www.npmjs.com/package/express-oas-generator)
+ - Hapi-swagger is a OpenAPI (aka Swagger) plug-in for Hapi When installed it will self document the API interface in a project - [hapi-swagger - npm](https://www.npmjs.com/package/hapi-swagger)
+
+ PHP
+ - swagger-php is a php swagger annotation and parsing library which generates interactive OpenAPI documentation for your RESTful API using doctrine annotations. -  [GitHub - zircote/swagger-php](https://github.com/zircote/swagger-php)
+
+ Ruby
+ - rspec-openapi generates OpenAPI schema from RSpec request specs - [Github - rspec-openapi](https://github.com/k0kubun/rspec-openapi)  
+ - rswag seamlessly adds a Swagger to Rails-based APIs - [Github - rswag](https://github.com/rswag/rswag) 
+ - zero-rails_openapi is a concise DSL for generating OpenAPI Specification 3 (OAS3) JSON documentation for Ruby application - [GitHub - zhandao/zero-rails_openapi](https://github.com/zhandao/zero-rails_openapi)
+ - The grape-swagger gem provides an auto generated documentation for your Grape API - [GitHub - ruby-grape/grape-swagger](https://github.com/ruby-grape/grape-swagger)
+ - Swagger::Blocks is a DSL for pure Ruby code blocks that can be turned into Swagger JSON - [.GitHub - fotinakis/swagger-blocks](https://github.com/fotinakis/swagger-blocks)
+ - openapi-rails is a CRUD interface for Rails models with OpenAPI (Swagger) specification support and Swagger UI integration - [GitHub - slate-studio/openapi-rails](https://github.com/slate-studio/openapi-rails)
+
+ Go
+ - swag automatically generates RESTful API documentation with Swagger 2.0 - [GitHub - swaggo/swag](https://github.com/swaggo/swag) 
+ - go-swagger (golang implementation of Swagger 2.0) is a complete suite of fully-featured, high-performance, API components to work with a Swagger API: server, client and data model - [Github - Swagger 2.0 implementation for go](https://github.com/go-swagger/go-swagger)
+
+APISec seamlessly integrates with most of the popular API gateways and automatically pulls the API specs in OAS format for easy API registration.  For the purpose of document completion and developer curiosity, a select few are mentioned below. 
+
+ AWS API Gateway
+ - get-export  is a CLI  command to export OAS from AWS API Gateway - [get-export — AWS CLI 2.4.27 Command Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/apigateway/get-export.html) 
+
+ Google Cloud Endpoints
+ - Generating the OpenAPI document is described here -, [Adding API management | Cloud Endpoints Frameworks for App Engine](https://cloud.google.com/endpoints/docs/frameworks/java/adding-api-management) 
+
+ Azure API Management
+ - API developers can export API definitions in OAS format - [Export API definitions from API Management developer portal | Azure updates | Microsoft Azure](https://azure.microsoft.com/en-in/updates/export-api-definitions-from-api-management-developer-portal/)
+
+ Apigee Edge
+ - Apigee Edge Proxy to OpenAPI 2.0 conversion tool. - [GitHub - anil614sagar/apigee2openapi](https://github.com/anil614sagar/apigee2openapi) 
+
+ Postman
+ - Convert Postman Collections v2.1/v2.0 to OpenAPI v3.0 -  [postman-to-openapi - npm](https://www.npmjs.com/package/postman-to-openapi) 
+
+
+ References:
+ 1. [OpenAPI Initiative](https://www.openapis.org/)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ How to Add Token Generation Code 
+
+ Step 1: Provide a curl for generating token
+
+Sample command:
+
+curl -s -d ‘{“username”:”admin”, “password”:”secret”}’ -H “Content-Type: application/json” -H “Accept: application/json” 
+-X POST https://ip/user/login
+
+ Step 2: Provide Token extraction logic using grep/jq
+
+If the Step 1 response look like this
+
+{“time”: “1594073751605”, “info”: {“token”: “val”}}.
+
+and your token path is “info.token” you can use json parser (jq) to extract the token. Alternatively, you can also use 
+“grep” to extract the value. For example:
+
+curl -s -d ‘{“username”:”admin”, “password”:”secret”}’ -H “Content-Type: application/json” -H “Accept: application/json”
+-X POST https://ip/user/login | jq –raw-output “.info.token”
+
+ Step 3: Provide a token usage example.
+
+curl –location –request GET ‘https://ip/api/users’ -H ‘X-API-KEY: <>’
+
+ Step 4: Wrapping your logic in @Cmd
+
+You can wrap your entire Step 2 content using the @Cmd syntax. And it will be evaluated at runtime before running the Playbooks.
+
+Usage:
+
+X-API-KEY: {{@Cmd | Step-2-content }}
+
+or
+
+Authorization: Bearer {{@Cmd | Step-2-content }}
+
+Sample code:
+
+Authorization: Bearer {{@Cmd | curl -s -d ‘{“username”:”admin”,”password”:”secret”}’ -H “Content-Type: application/json”
+-H “Accept: application/json” -X POST https://ip/user/login | jq –raw-output “.info.token” }}
+
+ Step 5: Using @CmdCache
+
+@CmdCache is similar to @Cmd, but it caches the token for 5 minutes and reuses it across multiple Playbooks.
+
+Usage:
+
+X-API-KEY: {{@Cmd | Step-2-content }}
+
+or
+
+Authorization: Bearer {{@Cmd | Step-2-content }}
+
+Sample code:
+
+Authorization: Bearer {{@CmdCache | curl -s -d ‘{“username”:”admin”,”password”:”secret”}’ -H “Content-Type: application/json”
+-H “Accept: application/json” -X POST https://ip/user/login | jq –raw-output “.info.token” }}
+
+ Step 6: Using @Vault for secure password usage.
+
+Create a key-value pair in Vault and inject it using this syntax.
+
+Usage:
+
+[[@Vault.ORG-NAME/KEY-NAME]]
+
+e.g.
+
+Authorization: Bearer {{@CmdCache | curl -s -d ‘{“username”:”admin”,”password”:”[[@Vault.ORG-NAME/KEY-NAME]]”}’ -H 
+“Content-Type: application/json” -H “Accept: application/json” -X POST https://ip/user/login | jq –raw-output “.info.token” }}
+
+Note: If the request body contains 2 or more opening/closing curly brackets together. Make sure to escape them using spaces 
+e.g. {{ -> { {.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Scan APIs locally with APIsec CLI 
+
+ Scan local APIs to find vulnerabilities with APIsec CLI
+
+ 1. Installation
+
+To download and run apisec-cli, please run the following
+
+git clone https://github.com/intesar/apisec-clicd apisec-clijava -jar apisec-cli.jar
+
+ 2. Signup with APIsec
+
+For the new users, you need to sign-up with APIsec. It creates a new tenant for you in the APIsec SaaS Platform.
+
+Command: signup –c  -e
+
+apisec> signup -c mycompany -e john@mycompany.com
+
+It returns the login credentials, i.e., the user name and an auto generated password. Save these in a file called
+fx.properties at the location specified. Upon next execution, you’ll be automatically logged-in to your tenant.
+
+Alternatively, you can keep the password with you, and when you execute the script next time you need to manually
+login using the below command.
+
+Command: login –u  -p
+
+apisec> login –u john@mycompany.com -p DBhk20Al
+
+ 3. Register APIs
+
+Register the API that you wish to scan by providing its publicly available Open API Spec URL i.e.,
+
+swagger url for e.g., http://mycompany.com/application/v2/api-docs
+
+Command: register –n  -o
+
+apisec> register –n orders -o http://mycompany.com/orders/v2/api/docs
+
+APIsec parses the specs and generates the security playbooks for scanning. This might take a few seconds 
+depending on the number of endpoints in the API.
+
+If your application is hosted internally and the OAS Url is not available publicly, APIsec recommends 
+you to upload the OAS file in json/yaml format to any public location like github and provide its direct url.
+
+Note: You can register multiple APIs in the same tenant by repeating the above step. Use ‘ls’ command 
+to view the list of all the registered APIs with APIsec
+
+Command: ls
+
+apisec> ls
+
+ 4. Scan the API
+
+To scan the API for vulnerabilities, use the scan command as below.
+
+Command: scan –n < api name>
+
+apisec> scan –n orders
+
+It runs all the playbooks generated in the above step, which invokes the endpoints at the application 
+hosted (the host url and the basepath provided in the OAS Specs).
+
+If the application is hosted internally and no public IP is available, you need to scan using your 
+local scanner. The steps to create a local scanner are available in the next section.
+
+ 5. Create a local scanner
+
+If the application is hosted internally and no public IP is available, you need to deploy a local scanner to invoke.
+
+Command: scanner create –n
+
+apisec> scanner create –n MyLocalScanner
+
+Command: scan –n  -s
+
+apisec> scan –n orders –s MyLocalScanner
+
+This command returns the docker and kubernetes scripts to deploy the scanner. Run the docker or 
+kubernetes script as per your environment setup on the same machine where the API is hosted or 
+any other machine in the network which can access the APIs. The script It will deploy the scanner in that machine.
+
+Use the below commands to view the list of all local scanners created in your tenant.
+
+Command: scanner ls
+
+apisec> scanner ls
+
+Use the below commands to remove the local scanner in your tenant. Command: scanner rm -n
+
+apisec> scanner rm -n MyLocalScanner
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+How to Call APIsec APIs
+
+ Step 1: Register A New User Account
+
+Note: Avoid using personal credentials when accessing APIsec APIs. Instead, register a new user and grant an appropriate role in Apisec™ UI and entitle this account to required projects by adding them as collaborators under the Configurations, Details tab.
+
+ Step 2: Authenticating and Generating A JWT Token
+
+curl -s -X POST https://cloud.apisec.ai/auth/login -H 'Accept: application/json' -H 'Content-Type: application/json'
+-d '{"username": "YOURUSERNAME", "password": "YOURPASSWORD"}'
+
+You will receive a token in the response body.
+
+{"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOZXRCYW5raW5nLy9mZXJvekBmeGxhYnMuaW8iLCJzY29wZXMiOiJST0xFX1VTRVIsUk9MRV9QUk9KRUNUX01BTkFHRVIsUk9MRV9BRE1JTiIsImlhdCI6MTY3MDMzNjEzNSwiZXhwIjoxNjcwNDIyNTM1fQ.93ZjDjeEpasWc5Wo_Jmcd0S9nGoVQ3TSfJNJbWeeIU"}
+
+Note: The TTL for this token is 24 hours.
+
+ Step 3: Get Entitled Projects
+
+Prerequisite: Use the token from the previous call as part of the header value in “Authorization: Bearer ”
+
+example: curl -s -X GET https://cloud.apisec.ai/api/v1/projects -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOZXRCYW5raW5nLy9mZXJvekBmeGxhYnMuaW8iLCJzY29wZXMiOiJST0xFX1VTRVIsUk9MRV9QUk9KRUNUX01BTkFHRVIsUk9MRV9BRE1JTiIsImlhdCI6MTY3MDMzNjEzNSwiZXhwIjoxNjcwNDIyNTM1fQ.93ZjDjeEpasWc5Wo_Jmcd0S9nGoVQ3TSfJNJbWeeIU" -H "Content-Type: application/json" -H "Accept: application/json" 
+
+Response structure
+
+ Step 4: Update Environment Base URL or Authentication in the desired Project
+Use the following endpoint to update the environment base URL or Authentication credentials in the desired project: 
+  PUT:/api/v1/projects/{projectId}/env/{envId}
+
+Prerequisite: 
+Using the GET:/api/v1/projects/{projectId}/env endpoint, grab the response body to use it as a payload in the consecutive step
+
+example: 
+curl -s -X GET https://cloud.apisec.ai/api/v1/projects/{projectId}/env -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOZXRCYW5raW5nLy9mZXJvekBmeGxhYnMuaW8iLCJzY29wZXMiOiJST0xFX1VTRVIsUk9MRV9QUk9KRUNUX01BTkFHRVIsUk9MRV9BRE1JTiIsImlhdCI6MTY3MDMzNjEzNSwiZXhwIjoxNjcwNDIyNTM1fQ.93ZjDjeEpasWc5Wo_Jmcd0S9nGoVQ3TSfJNJbWeeIU" -H "Content-Type: application/json" -H "Accept: application/json" 
+
+Use will receive the environment base URL and authentication credentials in the response body. Capture the response and update the values you would like to replace in the consecutive call
+
+example:
+curl -s -X PUT https://cloud.apisec.ai/api/v1/projects/{projectId}/env/{envId} -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOZXRCYW5raW5nLy9mZXJvekBmeGxhYnMuaW8iLCJzY29wZXMiOiJST0xFX1VTRVIsUk9MRV9QUk9KRUNUX01BTkFHRVIsUk9MRV9BRE1JTiIsImlhdCI6MTY3MDMzNjEzNSwiZXhwIjoxNjcwNDIyNTM1fQ.93ZjDjeEpasWc5Wo_Jmcd0S9nGoVQ3TSfJNJbWeeIU" -H "Content-Type: application/json" -H "Accept: application/json" -d '{ "id": "8adc81a88434193f01844166fc3e253b", "createdBy": "8a80812d69055412016905ea9d592bf7", "createdDate": "2022-11-04T06:49:39.134+0000", "modifiedBy": "8a80812d69055412016905ea9d592bf7", "modifiedDate": "2022-11-04T06:55:21.607+0000", "version": null, "inactive": false, "projectId": "8adc81a88434193f01844166fc362539", "name": "Master", "refId": "Master", "description": null, "baseUrl": "http://netbanking.apisec.ai:8080", "auths": [ { "accessTokenUri": null, "authType": "Basic", "authorizationScheme": null, "clientAuthenticationScheme": null, "clientId": null, "clientSecret": null, "grantType": null, "header_1": null, "header_2": null, "header_3": null, "id": null, "name": "Default", "inactive": false, "invalid": true, "password": "PASSWORD-MASKED", "preEstablishedRedirectUri": null, "scope": null, "tokenName": null, "useCurrentUri": null, "userAuthorizationUri": null, "username": "user1@netbanking.io", "tmpAutoCompleteOffVar": "user1@netbanking.io", "newForm": false }], "issueTracker": { "id": "8adc81a88434193f01844166fc3f253c", "name": null, "url": null, "projectKey": null, "issueType": null, "account": null, "accountType": null }, "projectCreation": false, "localOffSet": null, "endpoint": null, "region": null, "url": null, "reachable": true }'
+
+ Step 5: Get Project Vulnerabilities
+
+Note: Using the response from Step 3, make individual calls to retrieve project-specific vulnerabilities.
+
+ This call returns Critical and High vulnerabilities only from the master environment.
+
+example: curl -s -X GET https://cloud.apisec.ai/api/v1/projects/{projectId}/vulnerabilities -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOZXRCYW5raW5nLy9mZXJvekBmeGxhYnMuaW8iLCJzY29wZXMiOiJST0xFX1VTRVIsUk9MRV9QUk9KRUNUX01BTkFHRVIsUk9MRV9BRE1JTiIsImlhdCI6MTY3MDMzNjEzNSwiZXhwIjoxNjcwNDIyNTM1fQ.93ZjDjeEpasWc5Wo_Jmcd0S9nGoVQ3TSfJNJbWeeIU" -H "Content-Type: application/json" -H 
+"Accept: application/json" 
+
+Here are a few significant attributes of the vulnerability entity:
+
+  - id
+  - status
+  - environment.baseURL
+  - issueDesc
+  - label
+  - description
+  - category
+  - cvss
+  - severity
+  - rank
+  - suggestion
+  - createdDate
+  - method
+  - path
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ How to programmatically register API’s from AWS Gateway
+
+Depending on your development/deployment process, it may be easier to register API’s within APIsec using a script rather than the UI.  In order to make that easier, there is a pre-written script that is located on : https://github.com/apisec-inc/apisec-scripts/tree/master/AWS-API-Gateway.
+
+In order to use the script, there are a few steps/prerequisites.
+
+
+1. Install the AWS CLI.(https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+2. Generate an AWS Secret-key and Access-key
+
+Once you have the prerequisites done and your key information, you can use the script in the following manner.
+
+#Syntax: bash api-gateway-registration.sh --host "" --username "" --password "" --accesskey "&lt;ACCESS_KEY>" --secretkey "&lt;SECRET_KEY>" --name "" --accountType "&lt;ACCOUNT_TYPE>" --region ""`
+
+#Example usage: bash api-gateway-registration.sh --host "https://cloud.apisec.ai" --username "admin@apisec.ai" --password "xxxxxx" --accesskey "xxxxxxx" --secretkey "xxxxxxxxx" --name "Testing" --accountType "AWS_API_GATEWAY" --region "us-east-1"`
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Securing APIsec Service Account Credentials in Vault or Privileged Access Manager Solution
+
+ Problem Statement:
+
+APIsec supports Single Sign-On with OKTA using the OpenID Connect standard. Once Single Sign-On is activated in an APIsec organization, the users of that organization can no longer access their accounts using basic authentication. They should instead access the APIsec application with their OKTA Account. However, the APIsec APIs rely on the basic credentials required to generate an access token.
+
+
+ Solution:
+
+Organizations enabling Single Sign-On with APIsec should request them to create a service account to access the APIsec APIs. The APIsec Administrator creates and shares the credentials with the organization admin, who could change the password and store them in their preferred vault. These credentials are required to generate an access token before accessing the APIsec APIs.
+
+
+ High-Level Process:
+
+1. Reach out to the APIsec team for the creation of a service account, if SSO is active in your organization.
+2. Change the password of the newly created service account and store it in the vault.
+3. Create a policy that restricts other users from accessing the password. Except for the organization admin, no one can fetch the password.
+4. Using a client such as GitLab, schedule a job to rotate the access token at least twice daily and store it in the vault.
+5. Create a policy that restricts developers from updating or deleting the token. However, they should be allowed to access the token for calling APIsec APIs.
+
+
+ Summary
+
+APIsec platform provides REST APIS to perform almost all operations available from the Web Application. In general, APIsec APIs could help register a new API or reload a specification in an existing API project. Similarly, developers can run a new scan and review the vulnerabilities from the current scan. This way, developers can use the APIsec APIs to operationalize the core features of APIsec without using the APIsec Web Application.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Service Unavailable Error When Login To APIsec
+
+ Problem Statement:
+
+Suppose you encounter a "Service Unavailable" error when trying to login to the APIsec Console.
+
+
+ Solution:
+
+It is most likely that one or more duplicate accounts with the same email address you are trying to log in already exist in APIsec. APIsec has added a restriction to prevent users from creating an account with an existing email Id. However, the duplicate accounts created before adding a regulation should be disabled manually by an administrator.
+
+
+ Follow These Steps:
+
+1.	Log into the APIsec console.
+2.	Click on your name in the upper right corner to expand the menu and select Users.
+3.	Search and edit the user account with the duplicate email by clicking More.
+4.	Set the status from Active to Inactive and click Save.
+
+
+ Summary
+Duplicate user Accounts are restricted as it leads to user login errors. Existing duplicate accounts shall be disabled.
+
+
+ Note
+Ensure the primary account you would like to continue using is Active and if required, request the administrator to reset the password.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ On-Premises Sanity Test Guide
+
+ 1. API Registration 
+
+`Reading time 11 min`
+
+Register your APIs for security test and compliance. 
+
+To get started with APIsec security coverage and scanning for your APIs, you need to first register your API.
+
+On the Homepage, `click` Register API 
+
+![image](https://user-images.githubusercontent.com/87167426/188885759-5ed7c93a-d380-4f31-b323-610777a47784.png)
+
+  Add an API name, and an API Documentation URL/File.
+  
+  ![image](https://user-images.githubusercontent.com/87167426/188886850-50f4c9ca-9af8-4a5d-9f15-ded1d6d1620b.png)
+
+
+ 2. Scanners Deployment
+Playbooks are scanned and tests are executed to uncover vulnerabilities.
+
+`click` on 'Scanners' module on the home page as shown in the screenshot.
+
+![image](https://user-images.githubusercontent.com/87167426/188887698-773d600c-5620-403f-be7a-7daf11aa53e5.png)
+
+
+   You can deploy Private Scanners across AWS, Azure, GCP, Kubernetes, and on-premises. 
+   The APIsec scanner is a light-weight Docker container.
+   
+   You can deploy the on-prem Scanner as a docker container on any Linux host or deploy across the above mentioned cloud regions.
+   
+   1. `click` on New Scanner on the Scanner module page.
+   
+   ![image](https://user-images.githubusercontent.com/87167426/188888217-2ec96aeb-9ef6-47ab-8f5d-f1b2b6f7c6f9.png)
+
+
+  2. Enter Scanner name and register the cloud service.
+  
+  ![image](https://user-images.githubusercontent.com/87167426/188888441-998679f7-091f-4746-a0f3-e2c3194f5b17.png)
+
+  3. Click `Submit` to deploy the private scanner. 
+
+  On-Prem Deployment
+  
+  To deploy an on-prem private scanner, you need to set up the Docker/Kubernetes on the host machine.
+  
+   1. `click` on 'Docker/Kubernetes installer' and select cluster size.
+   
+   ![image](https://user-images.githubusercontent.com/87167426/188889247-ff4a3159-3208-4861-8d0f-7afc5bb2520a.png)
+  
+   2. `click` 'Submit' and 'OK' to proceed.
+ 
+
+ 3. Environment and Authentications Configuration 
+Based on security categories, the environments and authentications are configured to access APIs.
+
+  To add, edit, and delete the current API testing environment and the API user-login credentials.
+  When you register the API, the API environment is created. The default name is "Master" and the BaseURL is the API URL registered.
+  
+  You can add or clone an environment by clicking on the ellipsis besides the scroll bar.
+  The 'Authentications' list contains all the 'Credentials/Tokens' previously provided while registering the API. 
+  
+  You can also add and edit them on this page.
+  
+It is required to have a "Default" an "Invalid_Auth" authentications in a every environment for security testing.
+
+   1. To add Environment Click on 'Add Env', Insert Name and BaseURL. 
+   2. To Add an Auth Click on 'Add Auth' Insert and select 'Authentication Type'.
+   3. To Test added Authentication, select Auth and `click` on 'Test Authentications'.
+   
+   ![image](https://user-images.githubusercontent.com/87167426/188890629-fc3557bd-0428-40de-9a29-5daa3032e8f0.png)
+
+
+ 4. Triggering Scans 
+Executes generated playbooks of OWASP categories.
+
+  The key feature on the 'Project' dashboard is the 'Scan'. 
+  You can initiate a Scan on the current Project by clicking on scan tile on the top-right of the page.
+  
+  Select Profile + Select Scanner + Select Categories, you can initiate a Scan by clicking on 'Submit'.
+  
+  After the Scan is completed, it displays all the results.
+  
+  ![image](https://user-images.githubusercontent.com/87167426/188890887-b649f7f7-6303-4df6-af69-35a00deb65d2.png)
+
+
+ 5.  Detected Vulnerabilities View 
+Provides the vulnerability test results.
+
+  At the bottom of the 'Project' page, the list of Open Vulnerabilities appears after the Scan.
+  You can view the details of each vulnerability by clicking on it.
+  
+  ![image](https://user-images.githubusercontent.com/87167426/188941095-18060f9f-9c28-490a-bf46-f58b0e043c23.png)
+
+
+ 6. False Positives Review (FP) 
+Alert that incorrectly indicates that a vulnerability is present.
+
+   False positives are identified and marked by an AI Bot. 
+    
+   ![image](https://user-images.githubusercontent.com/87167426/188891615-a935f33a-f41c-48f2-a765-681e4771d576.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Getting OAS for an API from IBM DataPower
+
+ Overview
+
+The IBM API Connect supports two gateway types: DataPower Gateway (v5 compatible) and DataPower API Gateway.
+
+- DataPower API Gateway is a new gateway with the same security focus as DataPower Gateway (v5 compatible), with some limitations. - This is the one that connects with OAS.
+- DataPower Gateway (v5 compatible) has been available with IBM API Connect for a number of years.  - No support for OpenAPI
+
+ DataPower API Gateway
+
+OpenAPI 3.0 support in IBM API Connect
+
+OpenAPI 3.0 API support is provided by the DataPower API Gateway only but it has some limitations.  There is no OpenAPI 3.0 API support with the DataPower® Gateway (v5 compatible).  OpenAPI 3.0 APIs can be validated in the local file system by using the apic validate command provided by the developer toolkit CLI.  
+
+Limitations
+
+- User interface limitations
+- Limitations for APIs that are enforced by the DataPower API Gateway
+
+ How to get OAS?
+
+OAS definitions are created in the IBM API Connect, which is done either by using the API Designer UI application, or by using the browser based API Manager UI.
+
+For API Manager, the specifications for the APIs and Products are stored on the management server.
+For API Designer, the specifications for the APIs and Products are stored in the directory that you specified when you logged in. 
+
+ Connect SwaggerHub with IBM API Connect
+
+SwaggerHub connects with IBM API Connect to design and collaborate on the API definition, and then synchronize it with IBM Cloud to create an API Gateway.
+
+1. SwaggerHub requires an API key.
+2. From IBM Cloud > create an API key.
+3. Copy/download the key and added in SwaggerHub.
+4. In SwaggerHub, synchronize the API definition with IBM API connect.
+5. Once the APIs are published in IBM Cloud, the APIs will be available for external use.
+
+ References
+
+[API Connect Gateway Types](https://www.ibm.com/docs/en/api-connect/2018.x?topic=overview-api-connect-gateway-types)
+
+[SwaggerHub with IBM API Connect](https://support.smartbear.com/swaggerhub/docs/integrations/ibm-api-connect.html)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Scanner Sizing Recommendations
+
+- Scanners without resource limit will be faster to complete the jobs.
+- Below chart shows the execution time of playbooks with different resource limits.
+
+ClusterCount/Size	  No of Playbooks	Duration in Seconds	CPU Request	CPU Limit	Memory Request	 Memory Limit
+1	                  75			158s			5m		100m		256Mi		 500Mi
+1	  		  75			100s			5m		100m		500Mi		 1000Mi
+1	 	   	  75			43s			No Limit	No Limit	No Limit	 No Limit
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ APIsec Scanner Network Architecture
+
+Deploying the APIsec Scanner on a local or self-managed network is an easy task. The steps to do that are covered in another article. 
+This page is to describe the network connectivitiy required.
+
+We have two endpoints for connecting the scanner to the APIsec platform. Depending on which endpoint you choose, this impacts which ports need to be open. 
+
+The options that we have are 443 or 5671
+
+scanner.APIsec.ai:443  
+cloud.APIsec.ai:5671
+
+
+The image below is used to depict the following information:
+
+![Scanner Diagram](https://github.com/apisec-inc/documentation/assets/115025465/89cf707f-2238-4cba-a441-9e22d7a1b6a4)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ APIsec IP Acceptlist 
+
+Please accept all the below-mentioned IPs to use the APIsec platform.
+
+S.No	Component Name	  	Description				IP Address		Location
+1	cloud.apisec.ai	  	APIsec Cloud Platform Ingress IP	104.196.107.163		US-EAST
+2	Gateway IP	  	APIsec Cloud Platform Egress IP		34.23.155.76		---
+3	Super_1	APIsec    	Global Scanner				5.161.68.74		US-EAST
+4	Super_2	APIsec    	Global Scanner				5.161.68.74		US-EAST
+5	Super_3	APIsec    	Global Scanner				5.161.68.74		US-EAST
+6	Super_4	APIsec    	Global Scanner				34.195.172.63		US-EAST
+7	US_EAST_1	  	APIsec Global Scanner			5.161.93.150		US-EAST
+8	US_WEST_1	  	APIsec Global Scanner			5.161.93.150		US-EAST
+9	US_WEST_2	  	APIsec Global Scanner			5.161.93.150		US-EAST
+10	rate-limit-bot_low	APIsec Global Scanner			5.161.93.150		US-EAST
+11	rate-limit-bot_medium	APIsec Global Scanner			5.161.93.150		US-EAST
+12	rate-limit-bot_high	APIsec Global Scanner			5.161.93.150		US-EAST
+13	APIPenTest_1		APIsec EthicalCheck Scanner		34.195.172.63		US-EAST
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ APIsec Scanner as Kubernetes Deployment
+
+Please use the below Yaml file format for deploying the APIsec Scanner as a Kubernetes Deployment. Make sure to update the placeholders `<ScannerName>`, `<FX_IAM_VALUE>`, and `<FX_KEY_VALUE>` with your specific values.
+
+``` yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: <ScannerName>
+spec:
+ replicas: 5
+ selector:
+   matchLabels:
+     app: <ScannerName>
+ template:
+   metadata:
+     labels:
+       app: <ScannerName>
+   spec:
+     containers:
+       - name: <ScannerName>
+         image: apisec/scanner:latest
+         imagePullPolicy: IfNotPresent
+         env:
+         - name: FX_HOST
+           value: "cloud.apisec.ai"
+         - name: FX_IAM
+           value: "<FX_IAM_VALUE>"
+         - name: FX_KEY
+           value: "<FX_KEY_VALUE>"
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Deploying APIsec Scanner as a Docker Swarm Service
+
+Please use the below Yaml file format for deploying the APIsec Scanner as a Docker Swarm Service. Make sure to update the placeholders `<ScannerName>`, `<FX_IAM_VALUE>`, and `<FX_KEY_VALUE>` with your specific values.
+``` yaml
+version: '3.5'
+services:
+  <ScannerName>:
+    image: "apisec/scanner:latest"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      placement:
+        constraints: [node.role == manager]
+    environment:
+      - FX_HOST=cloud.apisec.ai
+      - FX_IAM=<FX_IAM_VALUE>
+      - FX_KEY=<FX_KEY_VALUE>
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ User Roles and their permissions
+
+There are 4 roles in APIsec. Admin, Project Manager, User and Basic.  Below is a chart showing various system activities of the 1st 3 roles. Basic role is not used.
+
+Functionality		Use Case						User	Project Manager	Admin
+Login			Login with SSO						Y	Y	Y
+			Login with a temporary password				Y	Y	Y
+			Login with password-only				Y	Y	Y
+			Login with a password and 2FA				Y	Y	Y
+Recover Credentials	Forgot Password						Y	Y	Y
+User Onboarding		Add New User						N	N	Y
+			Add New Users(Bulk)					N	N	Y
+			Add Guest User						N	N	Y
+			Remove Guest User					N	N	Y
+			Reset Password - Local User				N	N	Y
+			Modify Role - Local User				N	N	Y
+			Modify Role - Guest User				N	N	Y
+			Activate - Local User					N	N	Y
+			Deactivate - Local User					N	N	Y
+			Activate - Guest User					N	N	Y
+			Deactivate - Guest User					N	N	Y
+			Activate 2FA - Local User				N	N	N
+			Deactivate 2FA - Local User				N	N	N
+API Onboarding		API Registration via API Gateway			N	Y	Y
+			API Registration via Spec URL/File			N	Y	Y
+			Add Environment						N	Y	Y
+			Clone Environment					N	Y	Y
+			Update Environment - Base URL				N	Y	Y
+			Delete Environment					N	Y	Y
+			Update Environment - Add/Update Authentication		N	Y	Y
+			Update Environment - Delete Authentication		N	Y	Y
+			Update Environment - Disable Authentication			
+			View Environment & Authentication			Y	Y	Y
+			Manage Variables					N	Y	Y
+			Manage Profiles						N	Y	Y
+			Schedule Job - Daily / Weekly / Monthly			N	Y	Y
+API Configurations	Configure Categories
+			- Activate / Deactivate Category
+			- Re-Sync Category
+			- Configure Scenarios / Tests
+			- Update Assertions
+			- Update Severity
+			- Activate / Deactivate Show Responses
+			- Activate / Deactivate Skip Filing Vulnerability	N	Y	Y
+Manage Playbooks
+			- Generate Playbooks
+			- Delete Playbooks					N	Y	Y
+Manage Payloads
+			- Update Payloads
+			- Lock and Save Payloads
+			- Unlock and Save Payloads				N	Y	Y
+Project Management	Rename Project						N	Y	Y
+			Delete Project						N	Y	Y
+			Add collaborators to a Project				N	Y	Y
+			Reload Specification					N	Y	Y
+			View Spec Comparision Report				Y	Y	Y
+			View Spec Analysis					Y	Y	Y
+			View Activity Logs					Y	Y	Y
+Scans			View All Scans						Y	Y	Y
+			Delete Scan						N	Y	Y
+			Run an ad-hoc scan					Y	Y	Y
+			Rescan							Y	Y	Y
+Reports			Send Summary Report					Y	Y	Y
+			Send Detail Report					Y	Y	Y
+			Send Penetration Test Report				Y	Y	Y
+			Send Developer Report					Y	Y	Y
+			Send Compliance Report					Y	Y	Y
+			View Summary Report					Y	Y	Y
+			Download Summary Report					Y	Y	Y
+			Download All Vulnerabilities				Y	Y	Y
+			Download All Endpoints					Y	Y	Y
+			Download All APIs					Y	Y	Y
+Integrations		Configure Playbook Backup Integration			N	Y	Y
+			Configure Issue Tracker Integration			N	Y	Y
+			Configure Notifications					N	Y	Y
+			Configure Report Storage				N	Y	Y
+Global Integrations	Configure Playbook Backup Integration			N	Y	Y
+			Configure Issue Tracker Integration			N	Y	Y
+			Configure Notifications					N	Y	Y
+			Configure Report Storage				N	Y	Y
+			Configure API Gateway					N	Y	Y
+			Add / Remove Skip Endpoints				N	Y	Y
+			Configure Teams						N	Y	Y
+			Configure API Groups					N	Y	Y
+			Configure SSO						N	Y	Y
+			Enforce 2FA						N	Y	Y
+Scanners		Manage Scanners
+			- Create Scanner
+			- Delete Scanner					N	Y	Y
+Vault			Manage Secrets						N	N	Y
+Private Categories	Manage Private Category
+			- Author and Save as Draft
+			- Rebuild and Launch					N	Y	Y
+Security Center		View Security Center					Y	Y	Y
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Maintenance Window
+
+APIsec is committed to a continuous delivery cycle and as such will have a nightly maintenance window.
+The following tasks are executed during the maintenance windows:
+
+- Application and scanner deployments.
+- UX, bug fixes, enhancements, and new feature deployments,
+- Configuration changes related to security and usability are applied.
+
+Service status during the maintenance windows:
+
+- All updates are triggered automatically and/or done by the APIsec staff.
+- All updates are applied as rolling updates resulting in minimal downtime, if any. 
+- All changes pre and post-deployments are automatically tested by our continuous test automation suite.  If we determine any deficiences, an automatic rollback is triggered.
+- If you experience service issues during the maintenance window, please wait a few minutes and try again.
+
+ Maintenance Window Times
+
+APIsec currently is using the following maintenance times:
+
+```
+- 2:30 AM PST to 3:00 AM PST (half hour) Monday - Saturday
+- 2:30 AM PST to 3:30 AM PST (one hour) Sunday
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ API Security Platform Service Level Agreement  
+
+ Service Levels & Maintenance
+
+ APIsec Responsibilities
+
+APIsec will provide and maintain the APIsec platform, and will provide access through individual user credentials. APIsec will respond to support requests within a reasonable timeframe, and take steps to escalate and resolve issues appropriately. APIsec will maintain timely communication with the customer at all times.
+
+
+ Client Responsibilities
+
+Client will notify APIsec of any issues related to the APIsec platform or service in a timely manner. Client will provide APIsec with access to software and services for the purposes of maintenance, updates, and fault prevention. The client will maintain timely communication with APIsec at all times.
+
+
+ Support Response
+
+The response time measures how long it takes APIsec to respond to a support request via email (support@APIsec.ai) or other electronic means. APIsec is deemed to have responded when it has replied to the Client’s initial request via email or other electronic means, to either provide a solution or request further information. APIsec promises to respond to support requests within twenty-four (24) business hours. 
+
+
+ Resolution Times
+
+APIsec will always endeavour to resolve problems as swiftly as possible and ensure that the platform remains accessible and free of security vulnerabilities. It recognises that the Client’s use of the System is key to its business and that any downtime can be detrimental. However, APIsec is unable to provide guarantees regarding resolution times. This is because the nature and causes of problems can vary enormously. In all cases, APIsec will make its best efforts to resolve problems as quickly as possible and provide frequent progress reports to the Client.
+
+“Monthly Uptime” refers to the amount of time in any given month that Licensee can access the APIsec Platform, as a percentage of the total amount of time in such month, excluding Excused Outages. 
+
+APIsec will maintain systems and controls designed to maximize Monthly Uptime, minimize unscheduled outages, minimize impact from vulnerabilities, and enable prompt notification in the event of any unscheduled outage. 
+
+
+ Excused Outages
+
+Licensee may experience outages in the APIsec Platform due to Scheduled Maintenance and/or Emergency Maintenance, as defined below (collectively “Scheduled Maintenance” and “Emergency Maintenance''). 
+
+
+ Scheduled Maintenance
+
+“Scheduled Maintenance” means planned interruptions in the APIsec product site to make changes to the systems. APIsec regularly evaluates web site traffic patterns to determine low usage times in which to perform Scheduled Maintenance. Scheduled Maintenance may include outages. The maintenance window schedule can be found on our website at: https://docs.apisec.ai/maintenance-window/
+
+Emergency Maintenance
+
+“Emergency Maintenance'' refers to APIsec’s efforts to correct network or security conditions that may cause service outages or severe network performance degradation impacting multiple customers and requiring immediate action. Emergency Maintenance may degrade the quality of service, including possible outages. APIsec’s policy is to notify Licensee with as much advance notice as possible under the circumstance before performing the Emergency Maintenance. 
+
+
+ Contact Information
+
+Role	Name	Email
+Support	Team	support@apisec.ai
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ General Authentication Related Information
+
+ API Authentication Options
+API authentication is the process of verifying that a user or application is authorized to access an API. There are many different API authentication options available, each with its own strengths and weaknesses. The APIsec platform provides a flexible mechanism to enable customers to authenticate to a large variety of APIs, regardless of the chosen implementation.
+
+ API Keys
+API keys are secret tokens that are used to identify an application and grant it access to an API. They are typically generated by the API provider and given to the application developer. API keys are simple to use and implement, but they are also vulnerable to theft, as anyone who has the key can access the API.
+
+ OAuth 2.0
+OAuth 2.0 is an authorization framework that enables applications to obtain limited access to user accounts. It works by delegating user authentication to the service that hosts the user account, and authorizing third-party applications to access the user account. 
+
+ Authentication Options Supported in APIsec
+APIsec supports a multitude of HTTP authentication schemes and options for authenticating users to web servers. The following authentication options are available in the "Environments" coniguration screen: 
+
+<img width="465" alt="Authentication Screen" src="https://github.com/apisec-inc/documentation/assets/77065777/eb723fbc-7856-4b3c-9168-3db4f68ad6e6">
+
+ 1. Basic Authentication 
+Basic authentication is the most basic form of HTTP authentication. It sends the user's username and password in plain text over the network. APIsec configuration looks like this:
+
+<img width="377" alt="Basic Auth" src="https://github.com/apisec-inc/documentation/assets/77065777/d4b45e67-f636-4614-8fb9-9d0e92bfe9d1">
+
+ 2. Bearer Authentication 
+Bearer authentication is a more secure form of HTTP authentication. It uses an access token to authenticate the user. The access token is a string of characters that is generated by the API provider and given to the application developer. The application then includes the access token in the Authorization header of each API request. APIsec configuration looks like this:
+
+<img width="158" alt="Bearer Token" src="https://github.com/apisec-inc/documentation/assets/77065777/8a76a6e8-884e-4a31-a54c-8d932b010a39">
+
+ 3. JWT Authentication (JSON Web Token)
+JWT authentication is a popular way to authenticate users and applications. It uses JSON Web Tokens (JWTs) to represent the user's identity and authorization claims. JWTs are signed by the API provider, which ensures that they are tamper-proof. JWTs are also self-contained, which means that they can be verified without making a request to the API provider. These tokens typically expire within a predetermined amount of time and therefore need to be refreshed regulary. APIsec configuration looks like this:
+
+<img width="158" alt="JWT" src="https://github.com/apisec-inc/documentation/assets/77065777/704d8289-4f01-4ae3-85b8-616f46ffb498">
+
+ 4. OAuth 2.0 Authentication
+OAuth 2.0 is a popular option and the configuration settings look like this:
+
+<img width="370" alt="OATH2" src="https://github.com/apisec-inc/documentation/assets/77065777/c5d33690-f43b-4791-9124-fea2f9e49995">
+
+ 5. Multi Step Authentication
+A combination of several steps, where each step follows a specific path to ultimately retrieve authorization to access the API. Often the most flexible authentication option, the APIsec platform empowers customers to create and execute these steps in a script that returns the necessary keys. The image below shows how this is configured in APIsec:
+
+<img width="294" alt="CustomAuth" src="https://github.com/apisec-inc/documentation/assets/77065777/013f2f6b-a6f9-40b0-9806-cb20652c442d">
+
+   Example Header:
+   
+      Authorization: Bearer {{@Cmd | /tmp/Custom_Auth.sh UserA [[@Vault.UserA/Password]] }}
+
+   Note: The "Custom_Auth.sh" example script takes two input parameters, the username "UserA", and the vaulted password associated with the UserA user. The bearer token that is returned by the script is then replaced in the header.
+
+ 6. Authentication in the Request Body (Less Common)
+Steps to configure authentication in the request body
+
+In most APIs, authentication credentials are submitted in the request header. However, some APIs may require credentials such as an authentication Key or a token or a session ID in the request body.
+
+Here are the steps to configure credentials in the request body:
+
+1. Use existing authentication to configure credentials. Using the curl command, you may generate a dynamic token or use a static token to assign it to a header name such as Authorization or authenticationKey. 
+Please refer to this documentation for more information on generating dynamic tokens: https://docs.apisec.ai/Token%20Generation%20Code/ 
+
+2. Depending on the credentials used in the playbooks, the credentials are substituted automatically in the request headers.
+
+3. Now, we can refer to these headers substituted in the request body and update the payload section. Navigate to the configurations, payloads, and Default tab and update the field in the request body that requires a token or an authentication key with the following syntax:
+
+      {
+         "authenticationKey": "{{@RequestHeaders.authenticationKey}}"
+      }
+
+   Note: The authenticationKey is the header name we defined in Step 1.
+
+4. Lock and save the payload and regenerate playbooks.
+
+5. For ABAC, configure UserA and UserB credentials and update the payload within the same category, and regenerate playbooks.
+
+6. In the case of static tokens or keys, we can create variables with the following notation:
+
+   UserB.authenticationKey, and UserC.authenticationKey. Use the following syntax in the payload: {{@Var.authenticationKey}}. APIsec automatically substitutes the appropriate authenticationKey when executing a playbook using UserB or UserC credentials.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ How to setup and install Netbanking Application in Docker-Swarm Cluster!!!
+
+ Prerequisites:-
+
+1. Ubuntu 20.04 LTS (64-bit) based VM for Deploying  Netbanking Application. 
+2. No. of  Nodes: 1  
+
+              Node Configuration:
+                   CPUs: 4 cores
+                   Mem:  16 GB RAM
+                   Disk: 100 GB                        
+3. Ports:- 8080
+
+
+ Installation Steps.
+   
+       git clone https://github.com/apisec-inc/On-Prem.git
+    
+       cd On-Prem/Netbanking
+    
+       sudo chmod a+x fx-nb-installer.sh
+    
+       bash fx-nb-installer.sh 
+       
+       ## Once script execution finishes and installation is done, Netbanking Application and its API specs can be at the following links.
+       
+       ## Netbanking application: http://<Private-IP/Public-IP>:8080
+       
+       ## Netbanking APP API specs: http://<Private-IP/Public-IP>:8080/v2/api-docs
+       
+       ## Note 1:- You will have to enable/open port 8080 for the inbound request to access the application in the browser.
+       
+       ## Note 2:- Once fx-nb-installer.sh script execution finishes following org_users and enterprise admin accounts will be created in the postgres                      database.
+
+                   Enterprise Admin:
+                   email: user1@netbanking.io  password: admin123$ name: Netbanking UserA
+                   email: user6@netbanking.io  password: admin123$ name: Netbanking ROLE_ADMIN
+                   email: user11@netbanking.io password: admin123$ name: Netbanking ADMIN1
+                   email: user12@netbanking.io password: admin123$ name: Netbanking ADMIN2
+
+                   Org_users:
+                   email: user2@netbanking.io password: admin123$ name: Netbanking UserB
+                   email: user3@netbanking.io password: admin123$ name: Netbanking UserC
+                   email: user4@netbanking.io password: admin123$ name: Netbanking ROLE_USER
+                   email: user5@netbanking.io password: admin123$ name: Netbanking ROLE_PM
+                   email: user7@netbanking.io password: admin123$ name: Netbanking ROLE_BANK_ACCOUNTANT
+                   email: user8@netbanking.io password: admin123$ name: Netbanking ROLE_BANK_MANAGER
+        
+        ## Note 3:- You can use below credentials setting while registering a project using this API SPEC application so that project connects with the   application, by clicking on “Advanced Section”. That helps in verifying log4j assertions and others as well.
+
+         
+                     Default||Basic||user1@netbanking.io||admin123$
+                     UserA||Basic||user1@netbanking.io||admin123$
+                     UserB||Basic||user11@netbanking.io||admin123$
+                     UserC||Basic||user12@netbanking.io||admin123$
+                     ROLE_USER||Basic||user11@netbanking.io||admin123$
+                     ROLE_PM||Basic||user12@netbanking.io||admin123$
+                     ROLE_ADMIN||Basic||user6@netbanking.io||admin123$
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ Jira Integration FAQ
+
+The integration between APIsec and Jira is incredibly helpful in delivering vulnerabilities discovered in your API's to your development team in a familiar and easy to consume format.
+
+In the prior documentation, we discussed how to enable the Jira integration, but you probably have a few questions. 
+
+ - When does a ticket get created in Jira?
+
+APIsec scans your API's for vulnerabilites. When the scan is finished, any vulnerabilites are examined by one of APIsec's AI bots to look for false positives. If the vulnerability is determined to be valid, then a JIRA ticket is opened based on your integration settings.
+
+ - What happens if the ticket is closed in Jira?
+
+The recomended process is to NOT close the ticket in JIRA itself. Once the developer has addressed the vulnerability, the best course of action is to trigger another scan in APIsec.  If the vulnerability is fixed, the ticket will be transition by the results of the scan.
+
+ - Will a subsequent scan reopen a ticket?
+
+If the issue is resolved on the API, then no ticket will be created again.
+
+ - What causes issues to show up on subsequent scans, but not the initial scan?
+
+APIsec is an evolving platform. New categories are created and playbooks are updated. Either of these cases could result in subsequent scans discovering new vulnerabilities that were not present in the initial/prior scan.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
